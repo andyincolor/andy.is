@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanium — Andy Stone</title>
+  <style>
+    .funnel-row {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .funnel-row.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/style-Du7NvMDS.css">
+</head>
+<body class="bg-white" style="color: #151F27;">
+
+  <!-- NAV -->
+  <nav class="px-8 py-5 flex justify-between items-center border-b border-black/10 sticky top-0 bg-white/95 backdrop-blur-sm z-50">
+    <a href="/" class="text-sm font-medium tracking-widest uppercase" style="color: #151F27;">Andy Stone</a>
+    <a href="mailto:hi@andy.is"
+       class="text-sm font-medium px-4 py-2 border border-black/20 hover:border-black transition-colors">
+      Get in touch
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="px-8 pt-20 pb-0 max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <p class="text-sm font-medium tracking-widest uppercase text-black/40 mb-6">Strategic Pitch | Tanium</p>
+        <h1 class="font-bold leading-tight tracking-tight" style="font-size: clamp(2.5rem, 5vw, 4rem);">
+          From digital brochure to demand engine.
+        </h1>
+      </div>
+      <div class="lg:pt-16">
+        <p class="text-lg leading-relaxed text-black/60">
+          Tanium has great product-market fit — proven by industry reports and customer case studies. What's important now is building a modern digital demand strategy that can grow the company toward IPO.
+        </p>
+        <div class="flex gap-10 mt-10 flex-wrap">
+          <div>
+            <p class="text-xs tracking-widest uppercase text-black/40 mb-1">Role</p>
+            <p class="text-sm font-medium">Sr. Dir. Demand Generation</p>
+          </div>
+          <div>
+            <p class="text-xs tracking-widest uppercase text-black/40 mb-1">Focus</p>
+            <p class="text-sm font-medium">First Touch to SQL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO IMAGE -->
+  <section class="mt-16">
+    <div class="w-full overflow-hidden" style="aspect-ratio: 16/7; background-color: #1e2d3a;">
+      <div class="w-full h-full flex flex-col items-center justify-center gap-3">
+        <p class="text-white/20 text-xs tracking-widest uppercase">Image placeholder</p>
+        <p class="text-white/40 text-sm">Screenshot of current Tanium.com homepage</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="px-8 py-24 max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-3">
+        <p class="text-xs tracking-widest uppercase text-black/40 mt-1">Introduction</p>
+      </div>
+      <div class="lg:col-span-7">
+        <p class="text-2xl leading-relaxed font-light mb-8">
+          I've spent nearly two decades helping companies grow through design programs, digital strategy initiatives, and marketing campaigns. When looking at any new company, I've always started with research to understand the baseline — so there's a shared understanding of where to grow from here.
+        </p>
+        <p class="text-base leading-relaxed text-black/60 mb-4">
+          Tanium needs a marketing leader who can help drive the go-to-market strategy to create awareness, drive qualified leads, and turn those leads into direct sales opportunities. Outside of one-off campaigns and responsive tactics, the most important thing is to have a repeatable demand engine that touches on all points of programs, channels, processes, and underlying technology to hit pipeline.
+        </p>
+        <p class="text-base leading-relaxed text-black/60 mb-10">
+          I'm coming at this from an outsider's perspective, so there's a chance that many of my recommendations are already in flight or there are internal reasons for going a different route. None of my suggestions are meant as a slight towards the teams — just sharing my perspective on a direction for demand generation for a digital-first company.
+        </p>
+        <!-- Resume CTA — drop andy-stone-resume.pdf into /public/assets/ -->
+        <a href="/assets/andy-stone-resume.pdf"
+           class="inline-block text-sm font-medium px-6 py-3 border border-black/20 hover:border-black transition-colors">
+          Download Resume →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE PAIR — intro visuals -->
+  <section class="px-8 max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="bg-black/5 flex items-center justify-center flex-col gap-3" style="aspect-ratio: 4/3;">
+        <p class="text-black/20 text-xs tracking-widest uppercase">Image placeholder</p>
+        <p class="text-black/30 text-sm text-center px-8">Photo / work artifact from past demand programs</p>
+      </div>
+      <div class="bg-black/5 flex items-center justify-center flex-col gap-3" style="aspect-ratio: 4/3;">
+        <p class="text-black/20 text-xs tracking-widest uppercase">Image placeholder</p>
+        <p class="text-black/30 text-sm text-center px-8">Photo / screenshot from NetApp or other relevant work</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODERN DIGITAL DEMAND -->
+  <section class="px-8 py-24 max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+      <div class="lg:col-span-3">
+        <p class="text-xs tracking-widest uppercase text-black/40">The Plan</p>
+      </div>
+      <div class="lg:col-span-7">
+        <h2 class="text-3xl font-bold leading-tight mb-6">Modern Digital Demand</h2>
+        <p class="text-base leading-relaxed text-black/60 mb-4">
+          The role of Demand Generation encompasses every touchpoint of the customer journey. Starting at the top of the funnel is critical — more possibilities going into every test and idea down the road, and crucial in today's winner-takes-all environment.
+        </p>
+        <p class="text-base leading-relaxed text-black/60">
+          The plan for the first year: work down the marketing funnel from first-awareness to sales handoff, fixing leaks and making improvements along the way.
+        </p>
+      </div>
+    </div>
+
+    <!-- FUNNEL GRAPHIC -->
+    <div id="funnel" class="mt-4" style="display: flex; flex-direction: column; gap: 3px;">
+
+      <!-- Awareness -->
+      <div class="funnel-row" style="transition-delay: 0ms; clip-path: polygon(0% 0%, 100% 0%, 91% 100%, 9% 100%); background-color: #151F27; padding: 22px 0; text-align: center;">
+        <p class="text-white font-semibold text-sm tracking-widest uppercase">Awareness</p>
+        <p class="text-white/40 text-xs mt-1.5">SEO · Paid · Social · GEO · 3rd Party Validation</p>
+      </div>
+
+      <!-- Interest -->
+      <div class="funnel-row" style="transition-delay: 130ms; clip-path: polygon(9% 0%, 91% 0%, 82% 100%, 18% 100%); background-color: #1c2c3a; padding: 22px 0; text-align: center;">
+        <p class="text-white font-semibold text-sm tracking-widest uppercase">Interest</p>
+        <p class="text-white/40 text-xs mt-1.5">A/B Testing · Next Steps · Asking Questions</p>
+      </div>
+
+      <!-- Consideration -->
+      <div class="funnel-row" style="transition-delay: 260ms; clip-path: polygon(18% 0%, 82% 0%, 73% 100%, 27% 100%); background-color: #233545; padding: 22px 0; text-align: center;">
+        <p class="text-white font-semibold text-sm tracking-widest uppercase">Consideration</p>
+        <p class="text-white/40 text-xs mt-1.5">Demos · ROI Calculators · Chat · Simplified Forms</p>
+      </div>
+
+      <!-- Intent -->
+      <div class="funnel-row" style="transition-delay: 390ms; clip-path: polygon(27% 0%, 73% 0%, 64% 100%, 36% 100%); background-color: #2a3e50; padding: 22px 0; text-align: center;">
+        <p class="text-white font-semibold text-sm tracking-widest uppercase">Intent</p>
+        <p class="text-white/40 text-xs mt-1.5">In-Person Demos · Webinars · Events · Engineering Showcase</p>
+      </div>
+
+      <!-- Purchase -->
+      <div class="funnel-row" style="transition-delay: 520ms; clip-path: polygon(36% 0%, 64% 0%, 57% 100%, 43% 100%); background-color: #F5C518; padding: 22px 0; text-align: center;">
+        <p class="font-bold text-sm tracking-widest uppercase" style="color: #151F27;">Purchase</p>
+        <p class="text-xs mt-1.5" style="color: rgba(21,31,39,0.55);">Working Hand in Hand with Sales</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TECHNICAL STATS -->
+  <section class="px-8 pb-24 max-w-screen-xl mx-auto">
+    <div class="border-t border-black/10 pt-16">
+      <p class="text-xs tracking-widest uppercase text-black/40 mb-12">Technical Baseline</p>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <p class="font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
+            3.1<span style="color: #F5C518;">s</span>
+          </p>
+          <p class="text-sm text-black/50 mt-3 leading-relaxed">Time to First Byte on key listing pages. The benchmark is under 500ms.</p>
+        </div>
+        <div>
+          <p class="font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
+            25
+          </p>
+          <p class="text-sm text-black/50 mt-3 leading-relaxed">Blog Index Lighthouse performance score — the lowest on the site, with a Best Practices fail</p>
+        </div>
+        <div>
+          <p class="font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
+            7
+          </p>
+          <p class="text-sm text-black/50 mt-3 leading-relaxed">Mandatory form fields required from cold traffic to request a demo</p>
+        </div>
+        <div>
+          <p class="font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
+            0
+          </p>
+          <p class="text-sm text-black/50 mt-3 leading-relaxed">Active personalization paths delivered — despite 6Sense already being in the stack</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTHOUSE SCORES -->
+  <section class="px-8 pb-24 max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-3">
+        <p class="text-xs tracking-widest uppercase text-black/40 mb-2">Performance Audit</p>
+        <p class="text-sm text-black/50 leading-relaxed mt-4">Lighthouse mobile scores. Green is 90+. Orange is 50–89. Red is below 50.</p>
+      </div>
+      <div class="lg:col-span-9">
+        <div class="grid grid-cols-1 gap-px bg-black/10 border border-black/10">
+
+          <!-- Header -->
+          <div class="grid grid-cols-5 bg-black/5">
+            <div class="px-4 py-3 text-xs tracking-widest uppercase text-black/40">Page</div>
+            <div class="px-4 py-3 text-xs tracking-widest uppercase text-black/40 text-center">Performance</div>
+            <div class="px-4 py-3 text-xs tracking-widest uppercase text-black/40 text-center">Accessibility</div>
+            <div class="px-4 py-3 text-xs tracking-widest uppercase text-black/40 text-center">Best Practices</div>
+            <div class="px-4 py-3 text-xs tracking-widest uppercase text-black/40 text-center">SEO</div>
+          </div>
+
+          <!-- Homepage -->
+          <div class="grid grid-cols-5 bg-white">
+            <div class="px-4 py-4 text-sm font-medium border-r border-black/10">Homepage</div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fee2e2; color: #991b1b;">42</span>
+            </div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">90</span>
+            </div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">96</span>
+            </div>
+            <div class="px-4 py-4 text-center">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">92</span>
+            </div>
+          </div>
+
+          <!-- Content Hub -->
+          <div class="grid grid-cols-5 bg-black/[0.02]">
+            <div class="px-4 py-4 text-sm font-medium border-r border-black/10">Content Hub</div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fee2e2; color: #991b1b;">42</span>
+            </div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">90</span>
+            </div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">96</span>
+            </div>
+            <div class="px-4 py-4 text-center">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">92</span>
+            </div>
+          </div>
+
+          <!-- Content Hub Page -->
+          <div class="grid grid-cols-5 bg-white">
+            <div class="px-4 py-4 text-sm font-medium border-r border-black/10">Content Hub Page</div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fef9c3; color: #854d0e;">52</span>
+            </div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fef9c3; color: #854d0e;">86</span>
+            </div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">96</span>
+            </div>
+            <div class="px-4 py-4 text-center">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">92</span>
+            </div>
+          </div>
+
+          <!-- Blog Index -->
+          <div class="grid grid-cols-5 bg-black/[0.02]">
+            <div class="px-4 py-4 text-sm font-medium border-r border-black/10">Blog Index</div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fee2e2; color: #991b1b;">25</span>
+            </div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">90</span>
+            </div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fee2e2; color: #991b1b;">Fail</span>
+            </div>
+            <div class="px-4 py-4 text-center">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">100</span>
+            </div>
+          </div>
+
+          <!-- Blog Post -->
+          <div class="grid grid-cols-5 bg-white">
+            <div class="px-4 py-4 text-sm font-medium border-r border-black/10">Blog Post</div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fef9c3; color: #854d0e;">50</span>
+            </div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fef9c3; color: #854d0e;">89</span>
+            </div>
+            <div class="px-4 py-4 text-center border-r border-black/10">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fef9c3; color: #854d0e;">81</span>
+            </div>
+            <div class="px-4 py-4 text-center">
+              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">100</span>
+            </div>
+          </div>
+
+        </div>
+        <p class="text-xs text-black/40 mt-3">Source: Lighthouse Mobile audit, 2026. No page clears the performance threshold. The Blog Index has a Best Practices fail.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="px-8 pb-24 max-w-screen-xl mx-auto">
+    <div class="border-t border-black/10 pt-16">
+      <p class="font-bold leading-tight tracking-tight" style="font-size: clamp(1.75rem, 3.5vw, 3rem);">
+        "While the site has some issues with the performance scores,
+        <mark style="background-color: #F5C518; padding: 0 6px;">these are easily fixable with the correct focus and prioritization</mark>
+        for the teams."
+      </p>
+    </div>
+  </section>
+
+  <!-- FULL WIDTH IMAGE -->
+  <section class="px-8 max-w-screen-xl mx-auto">
+    <div class="w-full bg-black/5 overflow-hidden flex items-center justify-center flex-col gap-3" style="aspect-ratio: 16/7;">
+      <p class="text-black/20 text-xs tracking-widest uppercase">Image placeholder</p>
+      <p class="text-black/30 text-sm">Side-by-side: current Tanium.com nav (broken dropdown) vs. proposed fix</p>
+    </div>
+    <p class="text-xs text-black/40 mt-3">Top-level dropdown links are currently unreachable via click — they only trigger the menu. A basic usability failure on a flagship page.</p>
+  </section>
+
+  <!-- QUICK HITS -->
+  <section class="px-8 py-24 max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+      <div class="lg:col-span-3">
+        <p class="text-xs tracking-widest uppercase text-black/40">Quick Hits</p>
+      </div>
+      <div class="lg:col-span-7">
+        <h2 class="text-3xl font-bold leading-tight">From auditing the site today, there are a variety of tactical changes that could be made immediately.</h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-black/10 border border-black/10">
+
+      <!-- 1 -->
+      <div class="bg-white p-8">
+        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">01</p>
+        <h3 class="text-base font-bold mb-3">Traffic is declining</h3>
+        <p class="text-sm text-black/60 leading-relaxed">
+          Per <a href="https://www.similarweb.com/website/tanium.com/#overview" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-black transition-colors">SimilarWeb</a>, tanium.com gets ~267K visits/month — but traffic dropped 12.4%. This is likely due to the rise of GEO, with more research being done inside chat agents. Tanium needs to solidify its GEO/AIO strategy to account for the loss of traditional organic traffic.
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="bg-white p-8">
+        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">02</p>
+        <h3 class="text-base font-bold mb-3">Personalization is missing in action</h3>
+        <p class="text-sm text-black/60 leading-relaxed">
+          A CISO at a Fortune 100 bank and an IT admin at a mid-market retailer currently see the exact same homepage. No persona-based content paths, no industry-specific landing pages, no ABM-personalized experiences. 6Sense is already in the stack — it could be used immediately.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="bg-black/[0.02] p-8">
+        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">03</p>
+        <h3 class="text-base font-bold mb-3">Rotating hero carousels are conversion killers</h3>
+        <p class="text-sm text-black/60 leading-relaxed">
+          The homepage hero includes a 3-slide auto-rotating carousel. This is one of the most well-documented conversion problems in B2B web design — the majority of visitors never see slides 2 or 3. The Gartner MQ win and brand narrative are largely invisible to most traffic.
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <div class="bg-black/[0.02] p-8">
+        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">04</p>
+        <h3 class="text-base font-bold mb-3">The demo form is heavy for cold traffic</h3>
+        <p class="text-sm text-black/60 leading-relaxed">
+          The "See a Demo" form requires 7 fields on first touch — company email, first/last name, job title, phone, company name, and country — with no lighter conversion path or progressive profiling option. This creates unnecessary friction at the most critical conversion moment.
+        </p>
+      </div>
+
+      <!-- 5 -->
+      <div class="bg-white p-8">
+        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">05</p>
+        <h3 class="text-base font-bold mb-3">Events calendar needs more owned events</h3>
+        <p class="text-sm text-black/60 leading-relaxed">
+          Currently seeing 7 upcoming events listed — almost all third-party trade shows. The calendar needs more webinars and demo opportunities that prospective clients can try. Fewer form fields on these would help too.
+        </p>
+      </div>
+
+      <!-- 6 -->
+      <div class="bg-white p-8">
+        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">06</p>
+        <h3 class="text-base font-bold mb-3">Interactive conversion tools are absent</h3>
+        <p class="text-sm text-black/60 leading-relaxed">
+          There aren't many places for prospects to explore on their own terms. ROI calculators, interactive product tours, and self-guided demos would help. Competitors like CrowdStrike are moving toward these to warm up leads earlier in the journey.
+        </p>
+      </div>
+
+      <!-- 7 -->
+      <div class="bg-black/[0.02] p-8">
+        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">07</p>
+        <h3 class="text-base font-bold mb-3">No visible nurture architecture</h3>
+        <p class="text-sm text-black/60 leading-relaxed">
+          The site doesn't give visitors many next steps. When finishing an article or page, there should be "if you read this, here's what's next" content flows — tracked and used to fuel progressive profiling and further personalization.
+        </p>
+      </div>
+
+      <!-- 8 -->
+      <div class="bg-black/[0.02] p-8">
+        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">08</p>
+        <h3 class="text-base font-bold mb-3">JavaScript dependency breaks the site</h3>
+        <p class="text-sm text-black/60 leading-relaxed">
+          The site fails entirely when JavaScript is disabled — a real problem for bot crawlers and accessibility. Delivering pages as static assets would fix this and meaningfully speed up the site for everyone.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IMAGE PAIR — form before/after -->
+  <section class="px-8 max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="bg-black/5 flex items-center justify-center flex-col gap-3" style="aspect-ratio: 4/3;">
+        <p class="text-black/20 text-xs tracking-widest uppercase">Image placeholder</p>
+        <p class="text-black/30 text-sm text-center px-8">Current "See a Demo" form — 7 mandatory fields</p>
+      </div>
+      <div class="bg-black/5 flex items-center justify-center flex-col gap-3" style="aspect-ratio: 4/3;">
+        <p class="text-black/20 text-xs tracking-widest uppercase">Image placeholder</p>
+        <p class="text-black/30 text-sm text-center px-8">Concept: progressive profiling — lighter first touch</p>
+      </div>
+    </div>
+    <p class="text-xs text-black/40 mt-3">The current demo form requires 7 mandatory fields from cold traffic. Progressive profiling collects data over time — reducing friction without sacrificing lead quality.</p>
+  </section>
+
+  <!-- ASKING QUESTIONS -->
+  <section class="px-8 py-24 max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-xs tracking-widest uppercase text-black/40 mb-4">A Test from My Time at NetApp</p>
+        <h2 class="text-3xl font-bold leading-tight mb-6">Asking Questions</h2>
+        <p class="text-base leading-relaxed text-black/60 mb-4">
+          One small but important test I ran with my team was to simply ask questions to our customers on the site. It started as a small test on one page, but grew into whole-site profiling efforts. The assumption: customers in the B2B space don't want to waste time, and will tell you what they're looking for if you make it easy. So we just asked: what do you want?
+        </p>
+        <p class="text-base leading-relaxed text-black/60">
+          Tanium could benefit from a similar strategy — profiling the customer throughout the process and offering relevant information at every stage. Simply ask: what industry are you in? What are you looking to secure? What issues have you had in the past? It makes the site feel more human, and speeds up the entire sales process.
+        </p>
+      </div>
+      <div class="bg-black/5 flex items-center justify-center flex-col gap-3" style="aspect-ratio: 4/3;">
+        <p class="text-black/20 text-xs tracking-widest uppercase">Image placeholder</p>
+        <p class="text-black/30 text-sm text-center px-8">Wireframe / concept: interactive intent-capture module</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVY CTA — Why Me -->
+  <section class="px-8 py-24" style="background-color: #151F27;">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="text-xs tracking-widest uppercase mb-6" style="color: rgba(255,255,255,0.4);">Why Me</p>
+          <h2 class="font-bold leading-tight text-white" style="font-size: clamp(2rem, 4vw, 3.25rem);">
+            I've built this exact kind of engine — and the results are on record.
+          </h2>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <a href="mailto:hi@andy.is"
+             class="inline-block text-sm font-medium px-6 py-3 transition-colors"
+             style="background-color: #F5C518; color: #151F27;">
+            Let's talk →
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/10">
+        <div>
+          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(255,255,255,0.4);">NetApp</p>
+          <p class="text-white/70 text-sm leading-relaxed">Led a full transformation of NetApp's global demand engine — a 20,000-page site across 10 languages. In the first year after relaunch: doubled organic traffic, increased SQLs by 11%, and earned Forbes' #1 ranking in B2B digital experience. Delivered within budget, with the highest team satisfaction score in the organization.</p>
+        </div>
+        <div>
+          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(255,255,255,0.4);">Founded & Acquired</p>
+          <p class="text-white/70 text-sm leading-relaxed">Founded Emerson Stone, a B2B design and strategy agency (clients: IBM, 3M, Wells Fargo, Twitter) — acquired by Sawaya Consulting. Before that, co-founded Mocavo, a genealogical search engine that grew to the third largest in the industry before acquisition by FindMyPast.</p>
+        </div>
+        <div>
+          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(255,255,255,0.4);">How I Work</p>
+          <p class="text-white/70 text-sm leading-relaxed">I learn from sales and marketing teams first — to find out what's working, where investment is needed, and how to prioritize. I'm drawn to fast-moving environments where decisions are data-driven, and where I can be useful to a lot of teams, not just my own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSPECTIVES ON AI -->
+  <section class="px-8 py-24" style="background-color: #0a0a0a;">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-3">
+          <p class="text-xs tracking-widest uppercase mt-1" style="color: rgba(255,255,255,0.3);">Perspectives on AI</p>
+        </div>
+        <div class="lg:col-span-7">
+          <p class="text-2xl leading-relaxed font-light text-white mb-6">
+            Every single contributor in a marketing or sales organization should be using AI to speed up their workflows, create more efficiently, and discover new ways of approaching problems.
+          </p>
+          <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.5);">
+            In all of these ways, I see AI as a supercharger for teams — never as a replacement.
+          </p>
+          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.5);">
+            This site was created quickly with the assistance of various AI tools because I thought it would be an interesting exercise for this application. I used Perplexity for public research, SEMRush for technical and GEO research, Claude Code to create the overall page, and Figma MCP to send assets directly into the layouts. The writing was done by hand because I needed to synthesize too many disparate sources — and the attempts at AI drafting were taking longer to edit than necessary for a one-off production like this.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="px-8 py-12 border-t border-black/10">
+    <div class="max-w-screen-xl mx-auto flex justify-between items-center">
+      <a href="/" class="text-sm font-medium tracking-widest uppercase">Andy Stone</a>
+      <p class="text-xs text-black/30">Prepared for Tanium, 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    // Funnel scroll animation
+    const funnelRows = document.querySelectorAll('.funnel-row');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Stagger each row using its inline transition-delay
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    funnelRows.forEach(row => observer.observe(row));
+  </script>
+
+</body>
+</html>
