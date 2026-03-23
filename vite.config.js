@@ -10,6 +10,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         404: resolve(__dirname, '404.html'),
         tanium: resolve(__dirname, 'applying-to/tanium/index.html'),
+        housesitting: resolve(__dirname, 'housesitting/index.html'),
       },
     },
   },
