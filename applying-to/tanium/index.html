@@ -50,12 +50,20 @@
       animation: orb2 34s ease-in-out infinite;
     }
     .orb-3 {
+      width: 560px;
+      height: 560px;
+      background: radial-gradient(circle, rgba(249,115,22,0.13), transparent 70%);
+      bottom: 20%;
+      left: 18%;
+      animation: orb3 40s ease-in-out infinite;
+    }
+    .orb-4 {
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(14,165,233,0.10), transparent 70%);
-      bottom: 15%;
-      left: 25%;
-      animation: orb3 40s ease-in-out infinite;
+      background: radial-gradient(circle, rgba(244,114,182,0.11), transparent 70%);
+      bottom: 0%;
+      right: 8%;
+      animation: orb4 36s ease-in-out infinite;
     }
     @keyframes orb1 {
       0%, 100% { transform: translate(0, 0); }
@@ -71,6 +79,11 @@
       0%, 100% { transform: translate(0, 0); }
       50% { transform: translate(35px, 35px); }
     }
+    @keyframes orb4 {
+      0%, 100% { transform: translate(0, 0); }
+      33% { transform: translate(-35px, -28px); }
+      66% { transform: translate(22px, -18px); }
+    }
 
     /* Glass utility */
     .glass {
@@ -82,7 +95,7 @@
 
     /* Highlight marks */
     mark.hl {
-      background: linear-gradient(120deg, rgba(99,102,241,0.38) 0%, rgba(168,85,247,0.38) 100%);
+      background: linear-gradient(120deg, rgba(99,102,241,0.35) 0%, rgba(168,85,247,0.35) 55%, rgba(236,72,153,0.30) 100%);
       color: white;
       padding: 1px 5px;
       border-radius: 3px;
@@ -92,7 +105,7 @@
 
     /* Stat number gradient text */
     .stat-num {
-      background: linear-gradient(135deg, #a5b4fc, #c084fc);
+      background: linear-gradient(135deg, #fda4af, #e879f9, #818cf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -140,6 +153,48 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
+    /* Hit cards in light sections */
+    .hit-card-light {
+      background: #ffffff !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: 1px solid rgba(8,12,20,0.07) !important;
+      border-left: 4px solid #6366f1 !important;
+    }
+
+    /* Agent cards — override hit-card border/bg */
+    .hit-card.agent-card {
+      border: 1px solid rgba(99,102,241,0.22) !important;
+      background: rgba(8,12,28,0.75) !important;
+    }
+
+    /* Agent card grid — 6-col on desktop, 1-col on mobile */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1px;
+      background: rgba(99,102,241,0.15);
+      border: 1px solid rgba(99,102,241,0.15);
+    }
+    @media (max-width: 1024px) {
+      .agent-grid { grid-template-columns: 1fr; }
+      .agent-grid .hit-card { grid-column: span 1 !important; }
+    }
+
+    /* Agents panel right column: left border on desktop, top border on mobile */
+    .agents-col {
+      border-top: 1px solid rgba(99,102,241,0.2);
+      padding-top: 2.5rem;
+    }
+    @media (min-width: 1024px) {
+      .agents-col {
+        border-top: none;
+        border-left: 1px solid rgba(99,102,241,0.2);
+        padding-top: 0;
+        padding-left: 3rem;
+      }
+    }
+
     /* Image screenshots on dark bg */
     .screenshot {
       border-radius: 6px;
@@ -155,6 +210,7 @@
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
   </div>
 
   <!-- NAV -->
@@ -162,8 +218,8 @@
        style="background: rgba(8,12,20,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.07);">
     <a href="/" class="text-sm font-medium tracking-widest uppercase text-white">Andy Stone</a>
     <a href="mailto:hi@andy.is"
-       class="text-sm font-medium px-4 py-2 text-white/70 hover:text-white transition-colors"
-       style="border: 1px solid rgba(255,255,255,0.15);">
+       class="text-sm font-medium px-5 py-2 text-white transition-all hover:opacity-80"
+       style="border: 1px solid rgba(255,255,255,0.2); border-radius: 9999px;">
       Get in touch
     </a>
   </nav>
@@ -219,7 +275,8 @@
           I'm coming at this from an outsider's perspective, so some recommendations may already be in flight or there may be internal reasons for taking a different route. This site is meant only for internal teams at Tanium to reference.
         </p>
         <a href="/assets/andy-stone-resume.pdf"
-           class="inline-block text-sm font-medium px-6 py-3 text-white transition-all hover:opacity-80 glass">
+           class="inline-block font-semibold text-white transition-all hover:opacity-90"
+           style="background: linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%); padding: 14px 32px; border-radius: 9999px; font-size: 0.9375rem;">
           Download Resume →
         </a>
       </div>
@@ -293,7 +350,7 @@
       </div>
 
       <!-- Purchase -->
-      <div class="funnel-row" style="transition-delay: 520ms; clip-path: polygon(20% 0%, 80% 0%, 75% 100%, 25% 100%); background: linear-gradient(135deg, #6366f1, #a855f7); padding: 22px 0; text-align: center;">
+      <div class="funnel-row" style="transition-delay: 520ms; clip-path: polygon(20% 0%, 80% 0%, 75% 100%, 25% 100%); background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899); padding: 22px 0; text-align: center;">
         <p class="font-bold text-sm tracking-widest uppercase text-white">Purchase</p>
         <p class="funnel-sub text-sm font-bold mt-1.5" style="color: rgba(255,255,255,0.75);">Working Hand in Hand with Sales</p>
       </div>
@@ -314,6 +371,143 @@
           By owning all of these stages and focusing on delivering more pipeline and revenue, my plan would be for the team to <mark class="hl">report through real dashboards and data</mark> so we can quickly see which areas are succeeding and which are struggling. The teams should feel comfortable to try out tests to see if things work and be okay with failures that we can learn from together. With this approach, more individuals can become leaders in their areas and build initiatives that truly move the company forward.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- PERSPECTIVES ON AI -->
+  <section class="px-8 py-24 max-w-screen-xl mx-auto relative">
+    <div class="section-border pt-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-3">
+          <p class="text-xs tracking-widest uppercase mt-1" style="color: rgba(255,255,255,0.6);">Perspectives on AI</p>
+        </div>
+        <div class="lg:col-span-7">
+          <p class="text-2xl leading-relaxed font-light text-white mb-6">
+            Every single contributor in a marketing or sales organization should be using AI to speed up their workflows, create more efficiently, and discover new ways of approaching problems.
+          </p>
+          <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.65);">
+            In all of these ways, I see AI as a supercharger for teams, not a replacement.
+          </p>
+          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.65);">
+            This site was created quickly with the assistance of various AI tools because I thought it would be an interesting exercise for this application. I used Perplexity for public research, SEMRush for technical and AI search research, Claude Code to create the overall page, and Figma MCP to send assets directly into the layouts. The writing was done by hand because I needed to synthesize too many disparate sources, and attempts at AI drafting were taking longer to edit than was worth it for a one-off project like this.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTIC TEAM MODEL -->
+  <section class="px-8 py-24 max-w-screen-xl mx-auto relative">
+    <div class="section-border pt-16">
+
+      <!-- Centered bold header -->
+      <div class="text-center mb-16">
+        <p class="text-xs tracking-widest uppercase mb-6" style="display: inline-block; background: linear-gradient(135deg, rgba(249,115,22,0.15), rgba(236,72,153,0.18), rgba(139,92,246,0.18)); border: 1px solid rgba(236,72,153,0.28); color: rgba(255,255,255,0.92); padding: 5px 18px; border-radius: 9999px; letter-spacing: 0.2em;">Agentic Team Model</p>
+        <h2 class="font-bold leading-tight tracking-tight mx-auto" style="font-size: clamp(2.5rem, 5vw, 4rem); max-width: 860px; line-height: 1.1; margin-top: 1.25rem;">
+          Which work belongs to <span class="stat-num">humans.</span><br>
+          Which belongs to <span class="stat-num">agents.</span>
+        </h2>
+        <p class="text-base leading-relaxed mx-auto mt-6" style="color: rgba(255,255,255,0.65); max-width: 640px;">
+          The biggest shift in how I'd structure this team isn't the headcount — it's the architecture. Agents aren't tools that sit inside someone's workflow. They're team members with defined responsibilities, human oversight, and accountable output.
+        </p>
+      </div>
+
+      <!-- Agent cards: 5 cards in a 3+2 layout using a 6-col grid -->
+      <div class="agent-grid mb-12">
+
+        <div class="hit-card agent-card p-8" style="grid-column: span 2; transition-delay: 0ms;">
+          <div class="flex items-start justify-between mb-6">
+            <span class="stat-num font-bold" style="font-size: 1.75rem; line-height: 1;">01</span>
+            <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
+          </div>
+          <h3 class="text-base font-bold mb-3 text-white">Signal & Research</h3>
+          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Monitors industry news, competitor moves, analyst reports, and AI security events in real time. When something relevant breaks, it delivers a brief to the Content Strategist within the hour. No human is manually watching feeds.</p>
+        </div>
+
+        <div class="hit-card agent-card p-8" style="grid-column: span 2; transition-delay: 80ms;">
+          <div class="flex items-start justify-between mb-6">
+            <span class="stat-num font-bold" style="font-size: 1.75rem; line-height: 1;">02</span>
+            <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
+          </div>
+          <h3 class="text-base font-bold mb-3 text-white">Content Draft</h3>
+          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Takes a brief and produces first drafts: blog posts, email sequences, landing page copy, ad variants. A human edits and approves before anything publishes. Collapses draft-to-publish from days to hours.</p>
+        </div>
+
+        <div class="hit-card agent-card p-8" style="grid-column: span 2; transition-delay: 160ms;">
+          <div class="flex items-start justify-between mb-6">
+            <span class="stat-num font-bold" style="font-size: 1.75rem; line-height: 1;">03</span>
+            <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
+          </div>
+          <h3 class="text-base font-bold mb-3 text-white">SEO & SERP Monitor</h3>
+          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Tracks keyword rankings daily, identifies content gaps, and flags when a competitor outranks Tanium on a high-intent query. Generates content briefs automatically for every cluster that needs to exist.</p>
+        </div>
+
+        <div class="hit-card agent-card p-8" style="grid-column: span 3; transition-delay: 240ms;">
+          <div class="flex items-start justify-between mb-6">
+            <span class="stat-num font-bold" style="font-size: 1.75rem; line-height: 1;">04</span>
+            <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
+          </div>
+          <h3 class="text-base font-bold mb-3 text-white">Paid Media</h3>
+          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Runs A/B tests on ad creative within guardrails set by the Growth Manager, adjusts bids based on performance signals, and surfaces anomalies for human review. The human sets strategy and budget; the agent handles the optimization loop that used to require daily manual attention.</p>
+        </div>
+
+        <div class="hit-card agent-card p-8" style="grid-column: span 3; transition-delay: 320ms;">
+          <div class="flex items-start justify-between mb-6">
+            <span class="stat-num font-bold" style="font-size: 1.75rem; line-height: 1;">05</span>
+            <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
+          </div>
+          <h3 class="text-base font-bold mb-3 text-white">Nurture & CRM</h3>
+          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Watches site behavior and triggers personalized sequences based on engagement signals — what pages someone read, what they downloaded, whether they've been here before. SDR alerts and nurture tracks run automatically without manual campaign setup for each play.</p>
+        </div>
+
+      </div>
+
+      <!-- Humans vs Agents framing panel -->
+      <div style="background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.2); padding: 3.5rem;">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+          <div>
+            <p class="text-xs tracking-widest uppercase mb-6" style="color: rgba(255,255,255,0.72);">Humans Own</p>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
+                <span style="color: rgba(148,163,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
+                Strategy, brand judgment, and executive relationships
+              </li>
+              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
+                <span style="color: rgba(148,163,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
+                Budget decisions and prioritization
+              </li>
+              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
+                <span style="color: rgba(148,163,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
+                Anything that requires accountability
+              </li>
+            </ul>
+          </div>
+
+          <div class="agents-col">
+            <p class="text-xs tracking-widest uppercase mb-6" style="color: rgba(255,255,255,0.72);">Agents Own</p>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
+                <span style="color: rgba(192,132,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
+                Execution volume and signal monitoring
+              </li>
+              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
+                <span style="color: rgba(192,132,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
+                First drafts and optimization loops
+              </li>
+              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
+                <span style="color: rgba(192,132,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
+                The speed layer that makes fast-response programs possible
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <p class="text-sm leading-relaxed text-center mt-10 pt-10" style="color: rgba(255,255,255,0.62); border-top: 1px solid rgba(255,255,255,0.07); max-width: 600px; margin-left: auto; margin-right: auto;">
+          The goal isn't to replace the team. It's to make three humans do the work of eight — and let the senior people focus entirely on the decisions that actually move the business.
+        </p>
+      </div>
+
     </div>
   </section>
 
@@ -356,11 +550,11 @@
 
             <!-- Header -->
             <div class="grid grid-cols-5" style="background: rgba(255,255,255,0.05);">
-              <div class="px-4 py-3 text-xs tracking-widest uppercase" style="color: rgba(255,255,255,0.55);">Page</div>
-              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.55);">Performance</div>
-              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.55);">Accessibility</div>
-              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.55);">Best Practices</div>
-              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.55);">SEO</div>
+              <div class="px-4 py-3 text-xs tracking-widest uppercase" style="color: rgba(255,255,255,0.72);">Page</div>
+              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.72);">Performance</div>
+              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.72);">Accessibility</div>
+              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.72);">Best Practices</div>
+              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.72);">SEO</div>
             </div>
 
             <!-- Homepage -->
@@ -450,7 +644,7 @@
 
           </div>
         </div>
-        <p class="text-xs mt-3" style="color: rgba(255,255,255,0.3);">Source: Lighthouse Mobile audit, 2026. No page clears the performance threshold. The Blog Index has a Best Practices fail.</p>
+        <p class="text-xs mt-3" style="color: rgba(255,255,255,0.5);">Source: Lighthouse Mobile audit, 2026. No page clears the performance threshold. The Blog Index has a Best Practices fail.</p>
       </div>
     </div>
   </section>
@@ -466,180 +660,164 @@
     </div>
   </section>
 
+  <!-- IMAGE PAIR — form-fill + all-same -->
+  <section class="relative" style="background: #f4f7fd; border-top: 1px solid rgba(8,12,20,0.08);">
+  <div class="px-8 py-10 max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="screenshot" style="border-color: rgba(8,12,20,0.1);">
+        <img src="/images/form-fill.png" alt="Current Tanium demo form" class="w-full h-auto block" />
+        <p class="text-xs px-4 py-3" style="color: rgba(8,12,20,0.6);">Current popups require so many forms to unlock content that Tanium wants visitors to consume now</p>
+      </div>
+      <div class="screenshot" style="border-color: rgba(8,12,20,0.1);">
+        <img src="/images/all-same.png" alt="Tanium homepage showing same content for all visitors" class="w-full h-auto block" />
+        <p class="text-xs px-4 py-3" style="color: rgba(8,12,20,0.6);">Every visitor sees the same examples, case studies and solutions without personalization</p>
+      </div>
+    </div>
+  </div>
+  </section>
+
   <!-- QUICK HITS -->
-  <section class="px-8 py-24 max-w-screen-xl mx-auto relative">
+  <section class="relative" style="background: #eef2fc; border-top: 1px solid rgba(8,12,20,0.08); color: #080c14;">
+  <div class="px-8 py-24 max-w-screen-xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
       <div class="lg:col-span-3">
-        <p class="text-xs tracking-widest uppercase" style="color: rgba(255,255,255,0.6);">Quick Hits</p>
+        <p class="text-xs tracking-widest uppercase" style="color: rgba(8,12,20,0.5);">Quick Hits</p>
       </div>
       <div class="lg:col-span-7">
         <h2 class="text-3xl font-bold leading-tight">From auditing the current site today, there are a number of tactical changes that could help meaningfully improve the demand funnel before any shift in overall strategy.</h2>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-px" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-px" style="background: rgba(8,12,20,0.07); border: 1px solid rgba(8,12,20,0.07);">
 
       <!-- 1 -->
-      <div class="hit-card p-8" style="transition-delay: 0ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">01</p>
-        <h3 class="text-base font-bold mb-3 text-white">Organic traffic is declining</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          Per <a href="https://www.similarweb.com/website/tanium.com/#overview" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-white transition-colors">SimilarWeb</a>, tanium.com gets ~267K visits/month — but <mark class="hl">traffic dropped 12.4%</mark>. This is likely due in part to the rise of GenAI/AI search, with more research being done inside chat agents. Tanium needs to solidify its GenAI/AI search strategy to account for the shift away from traditional organic search traffic.
+      <div class="hit-card hit-card-light p-8" style="transition-delay: 0ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">01</p>
+        <h3 class="text-base font-bold mb-3">Organic traffic is declining</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          Per <a href="https://www.similarweb.com/website/tanium.com/#overview" target="_blank" rel="noopener" class="underline underline-offset-2 transition-colors" style="color: #4338ca;">SimilarWeb</a>, tanium.com gets ~267K visits/month — but <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">traffic dropped 12.4%</mark>. This is likely due in part to the rise of GenAI/AI search, with more research being done inside chat agents. Tanium needs to solidify its GenAI/AI search strategy to account for the shift away from traditional organic search traffic.
         </p>
       </div>
 
       <!-- 2 -->
-      <div class="hit-card p-8" style="transition-delay: 75ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">02</p>
-        <h3 class="text-base font-bold mb-3 text-white">Personalization is missing in action</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          A CISO at a Fortune 100 bank and an IT admin at a mid-market retailer currently see the same homepage. No persona-based content paths, no industry-specific landing pages, no ABM-personalized experiences. <mark class="hl">6sense is already in the stack — it could be used immediately.</mark>
+      <div class="hit-card hit-card-light p-8" style="transition-delay: 75ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">02</p>
+        <h3 class="text-base font-bold mb-3">Personalization is missing in action</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          A CISO at a Fortune 100 bank and an IT admin at a mid-market retailer currently see the same homepage. No persona-based content paths, no industry-specific landing pages, no ABM-personalized experiences. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">6sense is already in the stack — it could be used immediately.</mark>
         </p>
       </div>
 
       <!-- 3 -->
-      <div class="hit-card p-8" style="transition-delay: 150ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">03</p>
-        <h3 class="text-base font-bold mb-3 text-white">Rotating hero carousels are conversion killers</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          The homepage hero includes a 3-slide auto-rotating carousel. This is one of the most well-documented conversion problems in B2B web design: <mark class="hl">the majority of visitors never see slides 2 or 3.</mark> The Gartner MQ win and brand narrative are largely invisible to most traffic.
+      <div class="hit-card hit-card-light p-8" style="transition-delay: 150ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">03</p>
+        <h3 class="text-base font-bold mb-3">Rotating hero carousels are conversion killers</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          The homepage hero includes a 3-slide auto-rotating carousel. This is one of the most well-documented conversion problems in B2B web design: <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">the majority of visitors never see slides 2 or 3.</mark> The Gartner MQ win and brand narrative are largely invisible to most traffic.
         </p>
       </div>
 
       <!-- 4 -->
-      <div class="hit-card p-8" style="transition-delay: 225ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">04</p>
-        <h3 class="text-base font-bold mb-3 text-white">The demo form is heavy for cold traffic</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          The "See a Demo" form requires <mark class="hl">seven fields on first touch</mark> — company email, first and last name, job title, phone, company name, and country — with no lighter conversion path or progressive profiling option. This creates unnecessary friction at the most critical conversion moment.
+      <div class="hit-card hit-card-light p-8" style="transition-delay: 225ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">04</p>
+        <h3 class="text-base font-bold mb-3">The demo form is heavy for cold traffic</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          The "See a Demo" form requires <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">seven fields on first touch</mark> — company email, first and last name, job title, phone, company name, and country — with no lighter conversion path or progressive profiling option. This creates unnecessary friction at the most critical conversion moment.
         </p>
       </div>
 
       <!-- 5 -->
-      <div class="hit-card p-8" style="transition-delay: 300ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">05</p>
-        <h3 class="text-base font-bold mb-3 text-white">Events calendar needs more owned events</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          Currently seeing 7 upcoming events listed — <mark class="hl">almost all third-party trade shows.</mark> The calendar needs more webinars and demo opportunities that prospective clients can easily join. Fewer form fields on these would help too.
+      <div class="hit-card hit-card-light p-8" style="transition-delay: 300ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">05</p>
+        <h3 class="text-base font-bold mb-3">Events calendar needs more owned events</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          Currently seeing 7 upcoming events listed — <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">almost all third-party trade shows.</mark> The calendar needs more webinars and demo opportunities that prospective clients can easily join. Fewer form fields on these would help too.
         </p>
       </div>
 
       <!-- 6 -->
-      <div class="hit-card p-8" style="transition-delay: 375ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">06</p>
-        <h3 class="text-base font-bold mb-3 text-white">Interactive conversion tools are absent</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          There aren't many places for prospects to explore on their own terms. ROI calculators, interactive product tours, and self-guided demos would help. <mark class="hl">Competitors like CrowdStrike are moving toward these</mark> to warm up leads earlier in the journey.
+      <div class="hit-card hit-card-light p-8" style="transition-delay: 375ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">06</p>
+        <h3 class="text-base font-bold mb-3">Interactive conversion tools are absent</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          There aren't many places for prospects to explore on their own terms. ROI calculators, interactive product tours, and self-guided demos would help. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">Competitors like CrowdStrike are moving toward these</mark> to warm up leads earlier in the journey.
         </p>
       </div>
 
       <!-- 7 -->
-      <div class="hit-card p-8" style="transition-delay: 450ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">07</p>
-        <h3 class="text-base font-bold mb-3 text-white">No visible nurture architecture</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          The site doesn't give visitors many next steps. When visitors finish an article or page, there should be <mark class="hl">"if you read this, here's what's next" content flows</mark>, tracked and used to fuel progressive profiling and further personalization.
+      <div class="hit-card hit-card-light p-8" style="transition-delay: 450ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">07</p>
+        <h3 class="text-base font-bold mb-3">No visible nurture architecture</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          The site doesn't give visitors many next steps. When visitors finish an article or page, there should be <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">"if you read this, here's what's next" content flows</mark>, tracked and used to fuel progressive profiling and further personalization.
         </p>
       </div>
 
       <!-- 8 -->
-      <div class="hit-card p-8" style="transition-delay: 525ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">08</p>
-        <h3 class="text-base font-bold mb-3 text-white">JavaScript dependency breaks the site</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          <mark class="hl">The site fails entirely when JavaScript is disabled</mark> — a real problem for bot crawlers and accessibility. Delivering pages as static assets would fix this and meaningfully speed up the site for everyone.
+      <div class="hit-card hit-card-light p-8" style="transition-delay: 525ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">08</p>
+        <h3 class="text-base font-bold mb-3">JavaScript dependency breaks the site</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">The site fails entirely when JavaScript is disabled</mark> — a real problem for bot crawlers and accessibility. Delivering pages as static assets would fix this and meaningfully speed up the site for everyone.
         </p>
       </div>
 
     </div>
-  </section>
-
-  <!-- IMAGE PAIR — form-fill + all-same -->
-  <section class="px-8 max-w-screen-xl mx-auto relative">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      <div class="screenshot">
-        <img src="/images/form-fill.png" alt="Current Tanium demo form" class="w-full h-auto block" />
-        <p class="text-xs px-4 py-3" style="color: rgba(255,255,255,0.55);">Current popups require so many forms to unlock content that Tanium wants visitors to consume now</p>
-      </div>
-      <div class="screenshot">
-        <img src="/images/all-same.png" alt="Tanium homepage showing same content for all visitors" class="w-full h-auto block" />
-        <p class="text-xs px-4 py-3" style="color: rgba(255,255,255,0.55);">Every visitor sees the same examples, case studies and solutions without personalization</p>
-      </div>
-    </div>
+  </div>
   </section>
 
   <!-- ASKING QUESTIONS -->
-  <section class="px-8 py-24 max-w-screen-xl mx-auto relative">
+  <section class="relative" style="background-color: #f5f7fd; background-image: radial-gradient(ellipse 70% 70% at 96% 4%, rgba(99,102,241,0.1) 0%, transparent 60%), radial-gradient(ellipse 50% 55% at 4% 96%, rgba(168,85,247,0.08) 0%, transparent 55%); color: #080c14;">
+  <div class="px-8 py-24 max-w-screen-xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div>
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.6);">A Test from My Time at NetApp</p>
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.5);">A Test from My Time at NetApp</p>
         <h2 class="text-3xl font-bold leading-tight mb-6">Asking Questions</h2>
-        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
-          One small but important test I ran with my team was to simply ask questions to our customers on the site. It started as a small test on one page but grew into whole-site profiling efforts. The assumption: <mark class="hl">customers in the B2B space don't want to waste time</mark>, and will tell you what they're looking for if you make it easy. So we just asked: what do you want?
+        <p class="text-base leading-relaxed mb-4" style="color: rgba(8,12,20,0.7);">
+          One small but important test I ran with my team was to simply ask questions to our customers on the site. It started as a small test on one page but grew into whole-site profiling efforts. The assumption: <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">customers in the B2B space don't want to waste time</mark>, and will tell you what they're looking for if you make it easy. So we just asked: what do you want?
         </p>
-        <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">
+        <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">
           Tanium could benefit from a similar strategy — profiling the customer throughout the process and offering relevant information at every stage. Simply ask: What industry are you in? What are you looking to secure? What issues have you had in the past? It makes the site feel more human, and speeds up the entire sales process.
         </p>
       </div>
-      <div class="screenshot">
+      <div class="screenshot" style="border-color: rgba(8,12,20,0.1);">
         <img src="/images/netapp-example.png" alt="NetApp asking questions example" class="w-full h-auto block" />
       </div>
     </div>
+  </div>
   </section>
 
   <!-- CTA — Why Me -->
-  <section class="px-8 py-24 relative" style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07);">
+  <section class="px-8 py-24 relative" style="background-color: #ffffff; background-image: radial-gradient(ellipse 65% 60% at 100% 0%, rgba(99,102,241,0.07) 0%, transparent 55%), radial-gradient(ellipse 55% 55% at 0% 100%, rgba(168,85,247,0.06) 0%, transparent 55%); border-top: 1px solid rgba(8,12,20,0.08); border-bottom: 1px solid rgba(8,12,20,0.08); color: #080c14;">
     <div class="max-w-screen-xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
         <div class="lg:col-span-8">
-          <p class="text-xs tracking-widest uppercase mb-6" style="color: rgba(255,255,255,0.6);">Thank you for the opportunity</p>
-          <h2 class="font-bold leading-tight text-white" style="font-size: clamp(2rem, 4vw, 3.25rem);">
+          <p class="text-xs tracking-widest uppercase mb-6" style="color: rgba(8,12,20,0.5);">Thank you for the opportunity</p>
+          <h2 class="font-bold leading-tight" style="font-size: clamp(2rem, 4vw, 3.25rem);">
             This is an introductory look at how Tanium could transform its marketing into more predictable, digitally oriented growth.
           </h2>
         </div>
         <div class="lg:col-span-4 lg:text-right">
           <a href="mailto:hi@andy.is"
-             class="inline-block text-sm font-medium px-6 py-3 text-white transition-all hover:opacity-80"
-             style="background: linear-gradient(135deg, #6366f1, #a855f7);">
+             class="inline-block font-semibold text-white transition-all hover:opacity-90"
+             style="background: linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%); padding: 14px 32px; border-radius: 9999px; font-size: 0.9375rem;">
             Let's talk →
           </a>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16 pt-16" style="border-top: 1px solid rgba(255,255,255,0.08);">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16 pt-16" style="border-top: 1px solid rgba(8,12,20,0.1);">
         <div>
-          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(255,255,255,0.6);">NetApp</p>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Led a full transformation of NetApp's global demand engine — a 20,000-page site across 10 languages. In the first year after relaunch, we doubled organic traffic, increased SQLs by 11%, and earned Forbes' #1 ranking in B2B digital experience.</p>
-        </div>
-        <div>
-          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(255,255,255,0.6);">Founded & Acquired</p>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Founded Emerson Stone, a B2B design and strategy agency (clients: IBM, 3M, Wells Fargo, Twitter) — acquired by Sawaya Consulting. Before that, co-founded Mocavo, a genealogical search engine that grew to the third largest in the industry before acquisition by FindMyPast.</p>
+          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.5);">NetApp</p>
+          <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">Led a full transformation of NetApp's global demand engine — a 20,000-page site across 10 languages. In the first year after relaunch, we doubled organic traffic, increased SQLs by 11%, and earned Forbes' #1 ranking in B2B digital experience.</p>
         </div>
         <div>
-          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(255,255,255,0.6);">How I Work</p>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">I learn from sales and marketing teams first — to find out what's working, where investment is needed, and how to prioritize. I'm drawn to fast-moving environments where decisions are data-driven and where I can be useful to many teams, not just my own.</p>
+          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.5);">Founded & Acquired</p>
+          <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">Founded Emerson Stone, a B2B design and strategy agency (clients: IBM, 3M, Wells Fargo, Twitter) — acquired by Sawaya Consulting. Before that, co-founded Mocavo, a genealogical search engine that grew to the third largest in the industry before acquisition by FindMyPast.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PERSPECTIVES ON AI -->
-  <section class="px-8 py-24 relative" style="background: #050810;">
-    <div class="max-w-screen-xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div class="lg:col-span-3">
-          <p class="text-xs tracking-widest uppercase mt-1" style="color: rgba(255,255,255,0.6);">Perspectives on AI</p>
-        </div>
-        <div class="lg:col-span-7">
-          <p class="text-2xl leading-relaxed font-light text-white mb-6">
-            Every single contributor in a marketing or sales organization should be using AI to speed up their workflows, create more efficiently, and discover new ways of approaching problems.
-          </p>
-          <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.65);">
-            In all of these ways, I see AI as a supercharger for teams, not a replacement.
-          </p>
-          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.65);">
-            This site was created quickly with the assistance of various AI tools because I thought it would be an interesting exercise for this application. I used Perplexity for public research, SEMRush for technical and AI search research, Claude Code to create the overall page, and Figma MCP to send assets directly into the layouts. The writing was done by hand because I needed to synthesize too many disparate sources, and attempts at AI drafting were taking longer to edit than was worth it for a one-off project like this.
-          </p>
+        <div>
+          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.5);">How I Work</p>
+          <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">I learn from sales and marketing teams first — to find out what's working, where investment is needed, and how to prioritize. I'm drawn to fast-moving environments where decisions are data-driven and where I can be useful to many teams, not just my own.</p>
         </div>
       </div>
     </div>
