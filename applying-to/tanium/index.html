@@ -20,6 +20,85 @@
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="/src/style.css" />
   <style>
+    /* Animated gradient orbs */
+    .gradient-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+    }
+    .orb-1 {
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(99,102,241,0.18), transparent 70%);
+      top: -200px;
+      left: -150px;
+      animation: orb1 28s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(168,85,247,0.14), transparent 70%);
+      top: 25%;
+      right: -180px;
+      animation: orb2 34s ease-in-out infinite;
+    }
+    .orb-3 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(14,165,233,0.10), transparent 70%);
+      bottom: 15%;
+      left: 25%;
+      animation: orb3 40s ease-in-out infinite;
+    }
+    @keyframes orb1 {
+      0%, 100% { transform: translate(0, 0); }
+      33% { transform: translate(40px, -50px); }
+      66% { transform: translate(-30px, 30px); }
+    }
+    @keyframes orb2 {
+      0%, 100% { transform: translate(0, 0); }
+      33% { transform: translate(-50px, 30px); }
+      66% { transform: translate(30px, -40px); }
+    }
+    @keyframes orb3 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(35px, 35px); }
+    }
+
+    /* Glass utility */
+    .glass {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Highlight marks */
+    mark.hl {
+      background: linear-gradient(120deg, rgba(99,102,241,0.38) 0%, rgba(168,85,247,0.38) 100%);
+      color: white;
+      padding: 1px 5px;
+      border-radius: 3px;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    /* Stat number gradient text */
+    .stat-num {
+      background: linear-gradient(135deg, #a5b4fc, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Funnel animation */
     .funnel-row {
       opacity: 0;
       transform: translateY(12px);
@@ -29,55 +108,87 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Quick hits cards */
     .hit-card {
       opacity: 0;
       transform: translateY(10px);
       transition: opacity 0.4s ease, transform 0.4s ease;
-      border-left: 4px solid #FFE500;
+      border-left: 4px solid #6366f1;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
     .hit-card.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     @media (max-width: 768px) {
       .funnel-row {
         clip-path: none !important;
       }
     }
+
+    /* Score badges — dark versions */
+    .score-green { background: rgba(74,222,128,0.12); color: #86efac; }
+    .score-orange { background: rgba(251,191,36,0.12); color: #fcd34d; }
+    .score-red { background: rgba(248,113,113,0.15); color: #fca5a5; }
+
+    /* Section dividers */
+    .section-border {
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Image screenshots on dark bg */
+    .screenshot {
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
   </style>
 </head>
-<body class="bg-white" style="color: #151F27;">
+<body style="background: #080c14; color: white; position: relative;">
+
+  <!-- Animated gradient background -->
+  <div class="gradient-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
   <!-- NAV -->
-  <nav class="px-8 py-5 flex justify-between items-center border-b border-black/10 sticky top-0 bg-white/95 backdrop-blur-sm z-50">
-    <a href="/" class="text-sm font-medium tracking-widest uppercase" style="color: #151F27;">Andy Stone</a>
+  <nav class="px-8 py-5 flex justify-between items-center sticky top-0 z-50"
+       style="background: rgba(8,12,20,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.07);">
+    <a href="/" class="text-sm font-medium tracking-widest uppercase text-white">Andy Stone</a>
     <a href="mailto:hi@andy.is"
-       class="text-sm font-medium px-4 py-2 border border-black/20 hover:border-black transition-colors">
+       class="text-sm font-medium px-4 py-2 text-white/70 hover:text-white transition-colors"
+       style="border: 1px solid rgba(255,255,255,0.15);">
       Get in touch
     </a>
   </nav>
 
   <!-- HERO -->
-  <section class="px-8 pt-20 pb-0 max-w-screen-xl mx-auto">
+  <section class="px-8 pt-20 pb-0 max-w-screen-xl mx-auto relative">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div>
-        <p class="text-sm font-medium tracking-widest uppercase text-black/40 mb-6">Strategic Pitch | Tanium</p>
+        <p class="text-sm font-medium tracking-widest uppercase mb-6" style="color: rgba(255,255,255,0.6);">Strategic Pitch | Tanium</p>
         <h1 class="font-bold leading-none tracking-tight" style="font-size: clamp(2.5rem, 5vw, 4rem);">
           From digital brochure to demand engine.
         </h1>
       </div>
       <div class="lg:pt-16">
-        <p class="text-lg leading-relaxed text-black/60">
+        <p class="text-lg leading-relaxed" style="color: rgba(255,255,255,0.78);">
           Tanium has great product-market fit — proven by industry reports and customer case studies. What's important now is building a modern digital demand strategy that can grow the company toward IPO.
         </p>
         <div class="flex gap-10 mt-10 flex-wrap">
           <div>
-            <p class="text-xs tracking-widest uppercase text-black/60 mb-1">Role</p>
-            <p class="text-sm font-medium">Sr. Dir. Demand Generation</p>
+            <p class="text-xs tracking-widest uppercase mb-1" style="color: rgba(255,255,255,0.6);">Role</p>
+            <p class="text-sm font-medium text-white">Sr. Dir. Demand Generation</p>
           </div>
           <div>
-            <p class="text-xs tracking-widest uppercase text-black/60 mb-1">Focus</p>
-            <p class="text-sm font-medium">First Touch to SQL</p>
+            <p class="text-xs tracking-widest uppercase mb-1" style="color: rgba(255,255,255,0.6);">Focus</p>
+            <p class="text-sm font-medium text-white">First Touch to SQL</p>
           </div>
         </div>
       </div>
@@ -85,31 +196,30 @@
   </section>
 
   <!-- HERO IMAGE -->
-  <section class="mt-16">
+  <section class="mt-16 relative">
     <div class="w-full overflow-hidden" style="aspect-ratio: 16/7;">
       <img src="/images/tanium-hero.png" alt="Tanium.com homepage" class="w-full h-full object-cover" />
     </div>
   </section>
 
   <!-- INTRODUCTION -->
-  <section class="px-8 py-24 max-w-screen-xl mx-auto">
+  <section class="px-8 py-24 max-w-screen-xl mx-auto relative">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       <div class="lg:col-span-3">
-        <p class="text-xs tracking-widest uppercase text-black/60 mt-1">Introduction</p>
+        <p class="text-xs tracking-widest uppercase mt-1" style="color: rgba(255,255,255,0.6);">Introduction</p>
       </div>
       <div class="lg:col-span-7">
-        <p class="text-2xl leading-relaxed font-light mb-8">
+        <p class="text-2xl leading-relaxed font-light mb-8" style="color: rgba(255,255,255,0.85);">
           I've spent nearly two decades helping companies grow through design programs, digital strategy initiatives, and marketing campaigns. When looking at any new company, I've always started with research to understand the baseline, so there's a shared understanding of where to grow from here.
         </p>
-        <p class="text-base leading-relaxed text-black/60 mb-4">
-          Tanium needs a marketing leader who can help drive the go-to-market strategy to create awareness, drive qualified leads, and turn those leads into direct sales opportunities. Outside of one-off campaigns and responsive tactics, the most important thing is to have a <mark style="background-color: #FFE500; padding: 0 3px;">repeatable demand engine</mark> that covers programs, channels, processes, and underlying technology to consistently build pipeline.
+        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
+          Tanium needs a marketing leader who can help drive the go-to-market strategy to create awareness, drive qualified leads, and turn those leads into direct sales opportunities. Outside of one-off campaigns and responsive tactics, the most important thing is to have a <mark class="hl">repeatable demand engine</mark> that covers programs, channels, processes, and underlying technology to consistently build pipeline.
         </p>
-        <p class="text-base leading-relaxed text-black/60 mb-10">
+        <p class="text-base leading-relaxed mb-10" style="color: rgba(255,255,255,0.78);">
           I'm coming at this from an outsider's perspective, so some recommendations may already be in flight or there may be internal reasons for taking a different route. This site is meant only for internal teams at Tanium to reference.
         </p>
-        <!-- Resume CTA — drop andy-stone-resume.pdf into /public/assets/ -->
         <a href="/assets/andy-stone-resume.pdf"
-           class="inline-block text-sm font-medium px-6 py-3 transition-colors text-white hover:opacity-80" style="background-color: #151F27;">
+           class="inline-block text-sm font-medium px-6 py-3 text-white transition-all hover:opacity-80 glass">
           Download Resume →
         </a>
       </div>
@@ -117,17 +227,17 @@
   </section>
 
   <!-- FORBES QUOTE -->
-  <section class="px-8 pb-24 max-w-screen-xl mx-auto">
-    <div class="border-t border-black/10 pt-16">
-      <p class="text-xs tracking-widest uppercase text-black/60 mb-8">Recognition for My Work at NetApp</p>
+  <section class="px-8 pb-24 max-w-screen-xl mx-auto relative">
+    <div class="section-border pt-16">
+      <p class="text-xs tracking-widest uppercase mb-8" style="color: rgba(255,255,255,0.6);">Recognition for My Work at NetApp</p>
       <p class="font-bold leading-tight tracking-tight mb-8" style="font-size: clamp(1.75rem, 3.5vw, 3rem);">
-        "We ranked NetApp's homepage the highest overall and specifically in branding because it offers an <mark style="background-color: #FFE500; padding: 0 6px;">authentic experience.</mark>"
+        "We ranked NetApp's homepage the highest overall and specifically in branding because it offers an <mark class="hl">authentic experience.</mark>"
       </p>
-      <p class="text-base text-black/60">
+      <p class="text-base" style="color: rgba(255,255,255,0.65);">
         — Steve Ohanians, Forbes ·
         <a href="https://www.forbes.com/councils/forbesagencycouncil/2022/01/13/what-b2b-companies-can-learn-about-ux-from-the-websites-of-leading-fortune-500-companies/?streamIndex=0"
            target="_blank" rel="noopener"
-           class="underline underline-offset-2 hover:text-black transition-colors">
+           class="underline underline-offset-2 transition-colors hover:text-white">
           What B2B Companies Can Learn About UX From Fortune 500 Websites
         </a>
       </p>
@@ -135,21 +245,21 @@
   </section>
 
   <!-- MODERN DIGITAL DEMAND -->
-  <section class="px-8 py-24 max-w-screen-xl mx-auto">
+  <section class="px-8 py-24 max-w-screen-xl mx-auto relative">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
       <div class="lg:col-span-3">
-        <p class="text-xs tracking-widest uppercase text-black/60">Strategy</p>
+        <p class="text-xs tracking-widest uppercase" style="color: rgba(255,255,255,0.6);">Strategy</p>
       </div>
       <div class="lg:col-span-7">
         <h2 class="text-3xl font-bold leading-tight mb-6">Modern Digital Demand</h2>
-        <p class="text-base leading-relaxed text-black/60 mb-4">
+        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
           The role of Demand Generation encompasses every touchpoint of the customer journey. Starting at the top of the funnel is critical to overall success because it allows for more possibilities going into every test and idea down the road, and is crucial in today's winner-take-all world for SaaS companies.
         </p>
-        <p class="text-base leading-relaxed text-black/60">
+        <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">
           My proposal would be to start the team working down the marketing funnel from first awareness to sales handoff, fixing leaks and making improvements along the way. This process of approaching each stage individually allows for more ideation and experimentation rather than simply checking a box.
         </p>
-        <p class="text-base leading-relaxed text-black/60 mt-4">
-          <mark style="background-color: #FFE500; padding: 0 3px;">Tanium's largest asset in marketing is the primary corporate website.</mark> Every customer, partner, visitor and employee interacts with it, and the data coming out of it can inform a year's worth of work and refinements. While it is a large undertaking to evaluate every step of the process, it is the biggest opportunity for growth in the coming year. The funnel below calls out individual actions at each stage that could be made better on the site to increase SQLs.
+        <p class="text-base leading-relaxed mt-4" style="color: rgba(255,255,255,0.78);">
+          <mark class="hl">Tanium's largest asset in marketing is the primary corporate website.</mark> Every customer, partner, visitor and employee interacts with it, and the data coming out of it can inform a year's worth of work and refinements. While it is a large undertaking to evaluate every step of the process, it is the biggest opportunity for growth in the coming year. The funnel below calls out individual actions at each stage that could be made better on the site to increase SQLs.
         </p>
       </div>
     </div>
@@ -159,33 +269,33 @@
     <div id="funnel" class="mt-4" style="display: flex; flex-direction: column; gap: 3px;">
 
       <!-- Awareness -->
-      <div class="funnel-row" style="transition-delay: 0ms; clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%); background-color: #151F27; padding: 22px 0; text-align: center;">
+      <div class="funnel-row" style="transition-delay: 0ms; clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%); background-color: #1e1b4b; padding: 22px 0; text-align: center;">
         <p class="text-white font-semibold text-sm tracking-widest uppercase">Awareness</p>
         <p class="funnel-sub text-white text-sm font-bold mt-1.5">SEO · Paid · Social · GenAI/AI Search · 3rd Party Validation</p>
       </div>
 
       <!-- Interest -->
-      <div class="funnel-row" style="transition-delay: 130ms; clip-path: polygon(5% 0%, 95% 0%, 90% 100%, 10% 100%); background-color: #1c2c3a; padding: 22px 0; text-align: center;">
+      <div class="funnel-row" style="transition-delay: 130ms; clip-path: polygon(5% 0%, 95% 0%, 90% 100%, 10% 100%); background-color: #312e81; padding: 22px 0; text-align: center;">
         <p class="text-white font-semibold text-sm tracking-widest uppercase">Interest</p>
         <p class="funnel-sub text-white text-sm font-bold mt-1.5">A/B Testing · Offering Next Steps · Customers Answering Questions</p>
       </div>
 
       <!-- Consideration -->
-      <div class="funnel-row" style="transition-delay: 260ms; clip-path: polygon(10% 0%, 90% 0%, 85% 100%, 15% 100%); background-color: #233545; padding: 22px 0; text-align: center;">
+      <div class="funnel-row" style="transition-delay: 260ms; clip-path: polygon(10% 0%, 90% 0%, 85% 100%, 15% 100%); background-color: #3730a3; padding: 22px 0; text-align: center;">
         <p class="text-white font-semibold text-sm tracking-widest uppercase">Consideration</p>
         <p class="funnel-sub text-white text-sm font-bold mt-1.5">Demos · ROI Calculators · On-Site AI Powered Chat · Simplified Forms</p>
       </div>
 
       <!-- Intent -->
-      <div class="funnel-row" style="transition-delay: 390ms; clip-path: polygon(15% 0%, 85% 0%, 80% 100%, 20% 100%); background-color: #2a3e50; padding: 22px 0; text-align: center;">
+      <div class="funnel-row" style="transition-delay: 390ms; clip-path: polygon(15% 0%, 85% 0%, 80% 100%, 20% 100%); background-color: #4338ca; padding: 22px 0; text-align: center;">
         <p class="text-white font-semibold text-sm tracking-widest uppercase">Intent</p>
         <p class="funnel-sub text-white text-sm font-bold mt-1.5">In-Person Demos · Webinars · Events · Engineering Showcase</p>
       </div>
 
       <!-- Purchase -->
-      <div class="funnel-row" style="transition-delay: 520ms; clip-path: polygon(20% 0%, 80% 0%, 75% 100%, 25% 100%); background-color: #FFE500; padding: 22px 0; text-align: center;">
-        <p class="font-bold text-sm tracking-widest uppercase" style="color: #151F27;">Purchase</p>
-        <p class="funnel-sub text-sm font-bold mt-1.5" style="color: rgba(21,31,39,0.7);">Working Hand in Hand with Sales</p>
+      <div class="funnel-row" style="transition-delay: 520ms; clip-path: polygon(20% 0%, 80% 0%, 75% 100%, 25% 100%); background: linear-gradient(135deg, #6366f1, #a855f7); padding: 22px 0; text-align: center;">
+        <p class="font-bold text-sm tracking-widest uppercase text-white">Purchase</p>
+        <p class="funnel-sub text-sm font-bold mt-1.5" style="color: rgba(255,255,255,0.75);">Working Hand in Hand with Sales</p>
       </div>
 
     </div>
@@ -194,258 +304,250 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-16">
       <div class="lg:col-span-3"></div>
       <div class="lg:col-span-7">
-        <p class="text-base leading-relaxed text-black/60 mb-4">
+        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
           Every one of these stages in the funnel is critical to the ongoing success of the company. My goal would be to partner with sales and other marketing leaders to understand the current gaps, prioritization needs, and funding requirements to figure out how to tackle each of these areas.
         </p>
-        <p class="text-base leading-relaxed text-black/60 mb-4">
+        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
           Tanium's current leadership in industry reports is a major advantage, and it feels like a straightforward opportunity to capitalize on that success and capture more of the market in the coming year.
         </p>
-        <p class="text-base leading-relaxed text-black/60">
-          By owning all of these stages and focusing on delivering more pipeline and revenue, my plan would be for the team to <mark style="background-color: #FFE500; padding: 0 3px;">report through real dashboards and data</mark> so we can quickly see which areas are succeeding and which are struggling. The teams should feel comfortable to try out tests to see if things work and be okay with failures that we can learn from together. With this approach, more individuals can become leaders in their areas and build initiatives that truly move the company forward.
+        <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">
+          By owning all of these stages and focusing on delivering more pipeline and revenue, my plan would be for the team to <mark class="hl">report through real dashboards and data</mark> so we can quickly see which areas are succeeding and which are struggling. The teams should feel comfortable to try out tests to see if things work and be okay with failures that we can learn from together. With this approach, more individuals can become leaders in their areas and build initiatives that truly move the company forward.
         </p>
       </div>
     </div>
   </section>
 
   <!-- TECHNICAL STATS -->
-  <section class="px-8 pb-24 max-w-screen-xl mx-auto">
-    <div class="border-t border-black/10 pt-16">
-      <p class="text-xs tracking-widest uppercase text-black/60 mb-6">Technical Baseline</p>
+  <section class="px-8 pb-24 max-w-screen-xl mx-auto relative">
+    <div class="section-border pt-16">
+      <p class="text-xs tracking-widest uppercase mb-6" style="color: rgba(255,255,255,0.6);">Technical Baseline</p>
       <h2 class="text-3xl font-bold leading-tight mb-12">An audit of the existing site utilizing publicly-available information shows a number of opportunities for Tanium's website.</h2>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
-          <p class="font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
-            3.1s
-          </p>
-          <p class="text-sm text-black/50 mt-3 leading-relaxed">Time to First Byte on key listing pages. The industry benchmark is under 500ms.</p>
+          <p class="stat-num font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">3.1s</p>
+          <p class="text-sm mt-3 leading-relaxed" style="color: rgba(255,255,255,0.65);">Time to First Byte on key listing pages. The industry benchmark is under 500ms.</p>
         </div>
         <div>
-          <p class="font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
-            25
-          </p>
-          <p class="text-sm text-black/50 mt-3 leading-relaxed">Lighthouse score for the blog index, which is the lowest on the site</p>
+          <p class="stat-num font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">25</p>
+          <p class="text-sm mt-3 leading-relaxed" style="color: rgba(255,255,255,0.65);">Lighthouse score for the blog index, which is the lowest on the site</p>
         </div>
         <div>
-          <p class="font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
-            7
-          </p>
-          <p class="text-sm text-black/50 mt-3 leading-relaxed">Mandatory form fields required from cold traffic to request a demo or unlock useful content across the site</p>
+          <p class="stat-num font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">7</p>
+          <p class="text-sm mt-3 leading-relaxed" style="color: rgba(255,255,255,0.65);">Mandatory form fields required from cold traffic to request a demo or unlock useful content across the site</p>
         </div>
         <div>
-          <p class="font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
-            0
-          </p>
-          <p class="text-sm text-black/50 mt-3 leading-relaxed">Active personalization paths being delivered on the Tanium homepage for visitors on the site</p>
+          <p class="stat-num font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">0</p>
+          <p class="text-sm mt-3 leading-relaxed" style="color: rgba(255,255,255,0.65);">Active personalization paths being delivered on the Tanium homepage for visitors on the site</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- LIGHTHOUSE SCORES -->
-  <section class="px-8 pb-24 max-w-screen-xl mx-auto">
+  <section class="px-8 pb-24 max-w-screen-xl mx-auto relative">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       <div class="lg:col-span-3">
-        <p class="text-xs tracking-widest uppercase text-black/60 mb-2">Performance Audit</p>
-        <p class="text-sm text-black/50 leading-relaxed mt-4">Lighthouse mobile scores. Green is 90+. Orange is 50–89. Red is below 50.</p>
+        <p class="text-xs tracking-widest uppercase mb-2" style="color: rgba(255,255,255,0.6);">Performance Audit</p>
+        <p class="text-sm leading-relaxed mt-4" style="color: rgba(255,255,255,0.6);">Lighthouse mobile scores. Green is 90+. Orange is 50–89. Red is below 50.</p>
       </div>
       <div class="lg:col-span-9">
         <div class="overflow-x-auto">
-        <div class="grid grid-cols-1 gap-px bg-black/10 border border-black/10 min-w-[540px]">
+          <div class="grid grid-cols-1 gap-px min-w-[540px]" style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08);">
 
-          <!-- Header -->
-          <div class="grid grid-cols-5 bg-black/5">
-            <div class="px-4 py-3 text-xs tracking-widest uppercase text-black/40">Page</div>
-            <div class="px-4 py-3 text-xs tracking-widest uppercase text-black/40 text-center">Performance</div>
-            <div class="px-4 py-3 text-xs tracking-widest uppercase text-black/40 text-center">Accessibility</div>
-            <div class="px-4 py-3 text-xs tracking-widest uppercase text-black/40 text-center">Best Practices</div>
-            <div class="px-4 py-3 text-xs tracking-widest uppercase text-black/40 text-center">SEO</div>
+            <!-- Header -->
+            <div class="grid grid-cols-5" style="background: rgba(255,255,255,0.05);">
+              <div class="px-4 py-3 text-xs tracking-widest uppercase" style="color: rgba(255,255,255,0.55);">Page</div>
+              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.55);">Performance</div>
+              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.55);">Accessibility</div>
+              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.55);">Best Practices</div>
+              <div class="px-4 py-3 text-xs tracking-widest uppercase text-center" style="color: rgba(255,255,255,0.55);">SEO</div>
+            </div>
+
+            <!-- Homepage -->
+            <div class="grid grid-cols-5" style="background: rgba(255,255,255,0.02);">
+              <div class="px-4 py-4 text-sm font-medium text-white/80" style="border-right: 1px solid rgba(255,255,255,0.07);">Homepage</div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-red">42</span>
+              </div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">90</span>
+              </div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">96</span>
+              </div>
+              <div class="px-4 py-4 text-center">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">92</span>
+              </div>
+            </div>
+
+            <!-- Content Hub -->
+            <div class="grid grid-cols-5" style="background: transparent;">
+              <div class="px-4 py-4 text-sm font-medium text-white/80" style="border-right: 1px solid rgba(255,255,255,0.07);">Content Hub</div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-red">42</span>
+              </div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">90</span>
+              </div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">96</span>
+              </div>
+              <div class="px-4 py-4 text-center">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">92</span>
+              </div>
+            </div>
+
+            <!-- Content Hub Page -->
+            <div class="grid grid-cols-5" style="background: rgba(255,255,255,0.02);">
+              <div class="px-4 py-4 text-sm font-medium text-white/80" style="border-right: 1px solid rgba(255,255,255,0.07);">Content Hub Page</div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-orange">52</span>
+              </div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-orange">86</span>
+              </div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">96</span>
+              </div>
+              <div class="px-4 py-4 text-center">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">92</span>
+              </div>
+            </div>
+
+            <!-- Blog Index -->
+            <div class="grid grid-cols-5" style="background: transparent;">
+              <div class="px-4 py-4 text-sm font-medium text-white/80" style="border-right: 1px solid rgba(255,255,255,0.07);">Blog Index</div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-red">25</span>
+              </div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">90</span>
+              </div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-red">Issues</span>
+              </div>
+              <div class="px-4 py-4 text-center">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">100</span>
+              </div>
+            </div>
+
+            <!-- Blog Post -->
+            <div class="grid grid-cols-5" style="background: rgba(255,255,255,0.02);">
+              <div class="px-4 py-4 text-sm font-medium text-white/80" style="border-right: 1px solid rgba(255,255,255,0.07);">Blog Post</div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-orange">50</span>
+              </div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-orange">89</span>
+              </div>
+              <div class="px-4 py-4 text-center" style="border-right: 1px solid rgba(255,255,255,0.07);">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-orange">81</span>
+              </div>
+              <div class="px-4 py-4 text-center">
+                <span class="inline-block text-sm font-bold px-3 py-1 score-green">100</span>
+              </div>
+            </div>
+
           </div>
-
-          <!-- Homepage -->
-          <div class="grid grid-cols-5 bg-white">
-            <div class="px-4 py-4 text-sm font-medium border-r border-black/10">Homepage</div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fee2e2; color: #991b1b;">42</span>
-            </div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">90</span>
-            </div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">96</span>
-            </div>
-            <div class="px-4 py-4 text-center">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">92</span>
-            </div>
-          </div>
-
-          <!-- Content Hub -->
-          <div class="grid grid-cols-5 bg-black/[0.01]">
-            <div class="px-4 py-4 text-sm font-medium border-r border-black/10">Content Hub</div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fee2e2; color: #991b1b;">42</span>
-            </div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">90</span>
-            </div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">96</span>
-            </div>
-            <div class="px-4 py-4 text-center">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">92</span>
-            </div>
-          </div>
-
-          <!-- Content Hub Page -->
-          <div class="grid grid-cols-5 bg-white">
-            <div class="px-4 py-4 text-sm font-medium border-r border-black/10">Content Hub Page</div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fef9c3; color: #854d0e;">52</span>
-            </div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fef9c3; color: #854d0e;">86</span>
-            </div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">96</span>
-            </div>
-            <div class="px-4 py-4 text-center">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">92</span>
-            </div>
-          </div>
-
-          <!-- Blog Index -->
-          <div class="grid grid-cols-5 bg-black/[0.01]">
-            <div class="px-4 py-4 text-sm font-medium border-r border-black/10">Blog Index</div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fee2e2; color: #991b1b;">25</span>
-            </div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">90</span>
-            </div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fee2e2; color: #991b1b;">Issues</span>
-            </div>
-            <div class="px-4 py-4 text-center">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">100</span>
-            </div>
-          </div>
-
-          <!-- Blog Post -->
-          <div class="grid grid-cols-5 bg-white">
-            <div class="px-4 py-4 text-sm font-medium border-r border-black/10">Blog Post</div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fef9c3; color: #854d0e;">50</span>
-            </div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fef9c3; color: #854d0e;">89</span>
-            </div>
-            <div class="px-4 py-4 text-center border-r border-black/10">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #fef9c3; color: #854d0e;">81</span>
-            </div>
-            <div class="px-4 py-4 text-center">
-              <span class="inline-block text-sm font-bold px-3 py-1" style="background-color: #dcfce7; color: #166534;">100</span>
-            </div>
-          </div>
-
         </div>
-        </div>
-        <p class="text-xs text-black/40 mt-3">Source: Lighthouse Mobile audit, 2026. No page clears the performance threshold. The Blog Index has a Best Practices fail.</p>
+        <p class="text-xs mt-3" style="color: rgba(255,255,255,0.3);">Source: Lighthouse Mobile audit, 2026. No page clears the performance threshold. The Blog Index has a Best Practices fail.</p>
       </div>
     </div>
   </section>
 
   <!-- PULL QUOTE -->
-  <section class="px-8 pb-24 max-w-screen-xl mx-auto">
-    <div class="border-t border-black/10 pt-16">
+  <section class="px-8 pb-24 max-w-screen-xl mx-auto relative">
+    <div class="section-border pt-16">
       <p class="font-bold leading-tight tracking-tight" style="font-size: clamp(1.75rem, 3.5vw, 3rem);">
         While the site has some issues with the performance scores,
-        <mark style="background-color: #FFE500; padding: 0 6px;">these are easily fixable with the correct focus and prioritization</mark>
+        <mark class="hl">these are easily fixable with the correct focus and prioritization</mark>
         for the teams.
       </p>
     </div>
   </section>
 
   <!-- QUICK HITS -->
-  <section class="px-8 py-24 max-w-screen-xl mx-auto">
+  <section class="px-8 py-24 max-w-screen-xl mx-auto relative">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
       <div class="lg:col-span-3">
-        <p class="text-xs tracking-widest uppercase text-black/60">Quick Hits</p>
+        <p class="text-xs tracking-widest uppercase" style="color: rgba(255,255,255,0.6);">Quick Hits</p>
       </div>
       <div class="lg:col-span-7">
         <h2 class="text-3xl font-bold leading-tight">From auditing the current site today, there are a number of tactical changes that could help meaningfully improve the demand funnel before any shift in overall strategy.</h2>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-black/30 border border-black/30">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-px" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);">
 
       <!-- 1 -->
-      <div class="hit-card bg-white p-8" style="transition-delay: 0ms;">
-        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">01</p>
-        <h3 class="text-base font-bold mb-3">Organic traffic is declining</h3>
-        <p class="text-sm text-black/60 leading-relaxed">
-          Per <a href="https://www.similarweb.com/website/tanium.com/#overview" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-black transition-colors">SimilarWeb</a>, tanium.com gets ~267K visits/month — but <mark style="background-color: #FFE500; padding: 0 3px;">traffic dropped 12.4%</mark>. This is likely due in part to the rise of GenAI/AI search, with more research being done inside chat agents. Tanium needs to solidify its GenAI/AI search strategy to account for the shift away from traditional organic search traffic.
+      <div class="hit-card p-8" style="transition-delay: 0ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">01</p>
+        <h3 class="text-base font-bold mb-3 text-white">Organic traffic is declining</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
+          Per <a href="https://www.similarweb.com/website/tanium.com/#overview" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-white transition-colors">SimilarWeb</a>, tanium.com gets ~267K visits/month — but <mark class="hl">traffic dropped 12.4%</mark>. This is likely due in part to the rise of GenAI/AI search, with more research being done inside chat agents. Tanium needs to solidify its GenAI/AI search strategy to account for the shift away from traditional organic search traffic.
         </p>
       </div>
 
       <!-- 2 -->
-      <div class="hit-card bg-white p-8" style="transition-delay: 75ms;">
-        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">02</p>
-        <h3 class="text-base font-bold mb-3">Personalization is missing in action</h3>
-        <p class="text-sm text-black/60 leading-relaxed">
-          A CISO at a Fortune 100 bank and an IT admin at a mid-market retailer currently see the same homepage. No persona-based content paths, no industry-specific landing pages, no ABM-personalized experiences. <mark style="background-color: #FFE500; padding: 0 3px;">6sense is already in the stack — it could be used immediately.</mark>
+      <div class="hit-card p-8" style="transition-delay: 75ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">02</p>
+        <h3 class="text-base font-bold mb-3 text-white">Personalization is missing in action</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
+          A CISO at a Fortune 100 bank and an IT admin at a mid-market retailer currently see the same homepage. No persona-based content paths, no industry-specific landing pages, no ABM-personalized experiences. <mark class="hl">6sense is already in the stack — it could be used immediately.</mark>
         </p>
       </div>
 
       <!-- 3 -->
-      <div class="hit-card bg-white p-8" style="transition-delay: 150ms;">
-        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">03</p>
-        <h3 class="text-base font-bold mb-3">Rotating hero carousels are conversion killers</h3>
-        <p class="text-sm text-black/60 leading-relaxed">
-          The homepage hero includes a 3-slide auto-rotating carousel. This is one of the most well-documented conversion problems in B2B web design: <mark style="background-color: #FFE500; padding: 0 3px;">the majority of visitors never see slides 2 or 3.</mark> The Gartner MQ win and brand narrative are largely invisible to most traffic.
+      <div class="hit-card p-8" style="transition-delay: 150ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">03</p>
+        <h3 class="text-base font-bold mb-3 text-white">Rotating hero carousels are conversion killers</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
+          The homepage hero includes a 3-slide auto-rotating carousel. This is one of the most well-documented conversion problems in B2B web design: <mark class="hl">the majority of visitors never see slides 2 or 3.</mark> The Gartner MQ win and brand narrative are largely invisible to most traffic.
         </p>
       </div>
 
       <!-- 4 -->
-      <div class="hit-card bg-white p-8" style="transition-delay: 225ms;">
-        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">04</p>
-        <h3 class="text-base font-bold mb-3">The demo form is heavy for cold traffic</h3>
-        <p class="text-sm text-black/60 leading-relaxed">
-          The "See a Demo" form requires <mark style="background-color: #FFE500; padding: 0 3px;">seven fields on first touch</mark> — company email, first and last name, job title, phone, company name, and country — with no lighter conversion path or progressive profiling option. This creates unnecessary friction at the most critical conversion moment.
+      <div class="hit-card p-8" style="transition-delay: 225ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">04</p>
+        <h3 class="text-base font-bold mb-3 text-white">The demo form is heavy for cold traffic</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
+          The "See a Demo" form requires <mark class="hl">seven fields on first touch</mark> — company email, first and last name, job title, phone, company name, and country — with no lighter conversion path or progressive profiling option. This creates unnecessary friction at the most critical conversion moment.
         </p>
       </div>
 
       <!-- 5 -->
-      <div class="hit-card bg-white p-8" style="transition-delay: 300ms;">
-        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">05</p>
-        <h3 class="text-base font-bold mb-3">Events calendar needs more owned events</h3>
-        <p class="text-sm text-black/60 leading-relaxed">
-          Currently seeing 7 upcoming events listed — <mark style="background-color: #FFE500; padding: 0 3px;">almost all third-party trade shows.</mark> The calendar needs more webinars and demo opportunities that prospective clients can easily join. Fewer form fields on these would help too.
+      <div class="hit-card p-8" style="transition-delay: 300ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">05</p>
+        <h3 class="text-base font-bold mb-3 text-white">Events calendar needs more owned events</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
+          Currently seeing 7 upcoming events listed — <mark class="hl">almost all third-party trade shows.</mark> The calendar needs more webinars and demo opportunities that prospective clients can easily join. Fewer form fields on these would help too.
         </p>
       </div>
 
       <!-- 6 -->
-      <div class="hit-card bg-white p-8" style="transition-delay: 375ms;">
-        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">06</p>
-        <h3 class="text-base font-bold mb-3">Interactive conversion tools are absent</h3>
-        <p class="text-sm text-black/60 leading-relaxed">
-          There aren't many places for prospects to explore on their own terms. ROI calculators, interactive product tours, and self-guided demos would help. <mark style="background-color: #FFE500; padding: 0 3px;">Competitors like CrowdStrike are moving toward these</mark> to warm up leads earlier in the journey.
+      <div class="hit-card p-8" style="transition-delay: 375ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">06</p>
+        <h3 class="text-base font-bold mb-3 text-white">Interactive conversion tools are absent</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
+          There aren't many places for prospects to explore on their own terms. ROI calculators, interactive product tours, and self-guided demos would help. <mark class="hl">Competitors like CrowdStrike are moving toward these</mark> to warm up leads earlier in the journey.
         </p>
       </div>
 
       <!-- 7 -->
-      <div class="hit-card bg-white p-8" style="transition-delay: 450ms;">
-        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">07</p>
-        <h3 class="text-base font-bold mb-3">No visible nurture architecture</h3>
-        <p class="text-sm text-black/60 leading-relaxed">
-          The site doesn't give visitors many next steps. When visitors finish an article or page, there should be <mark style="background-color: #FFE500; padding: 0 3px;">"if you read this, here's what's next" content flows</mark>, tracked and used to fuel progressive profiling and further personalization.
+      <div class="hit-card p-8" style="transition-delay: 450ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">07</p>
+        <h3 class="text-base font-bold mb-3 text-white">No visible nurture architecture</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
+          The site doesn't give visitors many next steps. When visitors finish an article or page, there should be <mark class="hl">"if you read this, here's what's next" content flows</mark>, tracked and used to fuel progressive profiling and further personalization.
         </p>
       </div>
 
       <!-- 8 -->
-      <div class="hit-card bg-white p-8" style="transition-delay: 525ms;">
-        <p class="text-xs tracking-widest uppercase text-black/30 mb-4">08</p>
-        <h3 class="text-base font-bold mb-3">JavaScript dependency breaks the site</h3>
-        <p class="text-sm text-black/60 leading-relaxed">
-          <mark style="background-color: #FFE500; padding: 0 3px;">The site fails entirely when JavaScript is disabled</mark> — a real problem for bot crawlers and accessibility. Delivering pages as static assets would fix this and meaningfully speed up the site for everyone.
+      <div class="hit-card p-8" style="transition-delay: 525ms;">
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.45);">08</p>
+        <h3 class="text-base font-bold mb-3 text-white">JavaScript dependency breaks the site</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">
+          <mark class="hl">The site fails entirely when JavaScript is disabled</mark> — a real problem for bot crawlers and accessibility. Delivering pages as static assets would fix this and meaningfully speed up the site for everyone.
         </p>
       </div>
 
@@ -453,40 +555,40 @@
   </section>
 
   <!-- IMAGE PAIR — form-fill + all-same -->
-  <section class="px-8 max-w-screen-xl mx-auto">
+  <section class="px-8 max-w-screen-xl mx-auto relative">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      <div class="overflow-hidden">
+      <div class="screenshot">
         <img src="/images/form-fill.png" alt="Current Tanium demo form" class="w-full h-auto block" />
-        <p class="text-xs text-black/40 mt-3">Current popups require so many forms to unlock content that Tanium wants visitors to consume now</p>
+        <p class="text-xs px-4 py-3" style="color: rgba(255,255,255,0.55);">Current popups require so many forms to unlock content that Tanium wants visitors to consume now</p>
       </div>
-      <div class="overflow-hidden">
+      <div class="screenshot">
         <img src="/images/all-same.png" alt="Tanium homepage showing same content for all visitors" class="w-full h-auto block" />
-        <p class="text-xs text-black/40 mt-3">Every visitor sees the same examples, case studies and solutions without personalization</p>
+        <p class="text-xs px-4 py-3" style="color: rgba(255,255,255,0.55);">Every visitor sees the same examples, case studies and solutions without personalization</p>
       </div>
     </div>
   </section>
 
   <!-- ASKING QUESTIONS -->
-  <section class="px-8 py-24 max-w-screen-xl mx-auto">
+  <section class="px-8 py-24 max-w-screen-xl mx-auto relative">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div>
-        <p class="text-xs tracking-widest uppercase text-black/60 mb-4">A Test from My Time at NetApp</p>
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(255,255,255,0.6);">A Test from My Time at NetApp</p>
         <h2 class="text-3xl font-bold leading-tight mb-6">Asking Questions</h2>
-        <p class="text-base leading-relaxed text-black/60 mb-4">
-          One small but important test I ran with my team was to simply ask questions to our customers on the site. It started as a small test on one page but grew into whole-site profiling efforts. The assumption: <mark style="background-color: #FFE500; padding: 0 3px;">customers in the B2B space don't want to waste time</mark>, and will tell you what they're looking for if you make it easy. So we just asked: what do you want?
+        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
+          One small but important test I ran with my team was to simply ask questions to our customers on the site. It started as a small test on one page but grew into whole-site profiling efforts. The assumption: <mark class="hl">customers in the B2B space don't want to waste time</mark>, and will tell you what they're looking for if you make it easy. So we just asked: what do you want?
         </p>
-        <p class="text-base leading-relaxed text-black/60">
+        <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">
           Tanium could benefit from a similar strategy — profiling the customer throughout the process and offering relevant information at every stage. Simply ask: What industry are you in? What are you looking to secure? What issues have you had in the past? It makes the site feel more human, and speeds up the entire sales process.
         </p>
       </div>
-      <div class="overflow-hidden">
+      <div class="screenshot">
         <img src="/images/netapp-example.png" alt="NetApp asking questions example" class="w-full h-auto block" />
       </div>
     </div>
   </section>
 
-  <!-- NAVY CTA — Why Me -->
-  <section class="px-8 py-24" style="background-color: #151F27;">
+  <!-- CTA — Why Me -->
+  <section class="px-8 py-24 relative" style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07);">
     <div class="max-w-screen-xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
         <div class="lg:col-span-8">
@@ -497,32 +599,32 @@
         </div>
         <div class="lg:col-span-4 lg:text-right">
           <a href="mailto:hi@andy.is"
-             class="inline-block text-sm font-medium px-6 py-3 transition-colors"
-             style="background-color: #FFE500; color: #151F27;">
+             class="inline-block text-sm font-medium px-6 py-3 text-white transition-all hover:opacity-80"
+             style="background: linear-gradient(135deg, #6366f1, #a855f7);">
             Let's talk →
           </a>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/10">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16 pt-16" style="border-top: 1px solid rgba(255,255,255,0.08);">
         <div>
           <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(255,255,255,0.6);">NetApp</p>
-          <p class="text-white/70 text-sm leading-relaxed">Led a full transformation of NetApp's global demand engine — a 20,000-page site across 10 languages. In the first year after relaunch, we doubled organic traffic, increased SQLs by 11%, and earned Forbes' #1 ranking in B2B digital experience.</p>
+          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Led a full transformation of NetApp's global demand engine — a 20,000-page site across 10 languages. In the first year after relaunch, we doubled organic traffic, increased SQLs by 11%, and earned Forbes' #1 ranking in B2B digital experience.</p>
         </div>
         <div>
           <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(255,255,255,0.6);">Founded & Acquired</p>
-          <p class="text-white/70 text-sm leading-relaxed">Founded Emerson Stone, a B2B design and strategy agency (clients: IBM, 3M, Wells Fargo, Twitter) — acquired by Sawaya Consulting. Before that, co-founded Mocavo, a genealogical search engine that grew to the third largest in the industry before acquisition by FindMyPast.</p>
+          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Founded Emerson Stone, a B2B design and strategy agency (clients: IBM, 3M, Wells Fargo, Twitter) — acquired by Sawaya Consulting. Before that, co-founded Mocavo, a genealogical search engine that grew to the third largest in the industry before acquisition by FindMyPast.</p>
         </div>
         <div>
           <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(255,255,255,0.6);">How I Work</p>
-          <p class="text-white/70 text-sm leading-relaxed">I learn from sales and marketing teams first — to find out what's working, where investment is needed, and how to prioritize. I'm drawn to fast-moving environments where decisions are data-driven and where I can be useful to many teams, not just my own.</p>
+          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">I learn from sales and marketing teams first — to find out what's working, where investment is needed, and how to prioritize. I'm drawn to fast-moving environments where decisions are data-driven and where I can be useful to many teams, not just my own.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PERSPECTIVES ON AI -->
-  <section class="px-8 py-24" style="background-color: #0a0a0a;">
+  <section class="px-8 py-24 relative" style="background: #050810;">
     <div class="max-w-screen-xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div class="lg:col-span-3">
@@ -532,10 +634,10 @@
           <p class="text-2xl leading-relaxed font-light text-white mb-6">
             Every single contributor in a marketing or sales organization should be using AI to speed up their workflows, create more efficiently, and discover new ways of approaching problems.
           </p>
-          <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.5);">
+          <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.65);">
             In all of these ways, I see AI as a supercharger for teams, not a replacement.
           </p>
-          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.5);">
+          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.65);">
             This site was created quickly with the assistance of various AI tools because I thought it would be an interesting exercise for this application. I used Perplexity for public research, SEMRush for technical and AI search research, Claude Code to create the overall page, and Figma MCP to send assets directly into the layouts. The writing was done by hand because I needed to synthesize too many disparate sources, and attempts at AI drafting were taking longer to edit than was worth it for a one-off project like this.
           </p>
         </div>
@@ -544,25 +646,18 @@
   </section>
 
   <script>
-    // Funnel scroll animation
     const funnelRows = document.querySelectorAll('.funnel-row');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Stagger each row using its inline transition-delay
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.2 });
-
     funnelRows.forEach(row => observer.observe(row));
 
     const hitCards = document.querySelectorAll('.hit-card');
     const cardObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.1 });
     hitCards.forEach(card => cardObserver.observe(card));
