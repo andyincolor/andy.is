@@ -21,7 +21,14 @@
       "Bash(curl -sI -L \"https://goo.gl/maps/wg5gDfFEZyaVHkoT9\")",
       "Bash(curl -sI -L \"https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2sPy7ZD7DLJBva3GO3vHNSWDaS_ZmWdA!3e3?shorturl=1\")",
       "Bash(git add:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "WebSearch",
+      "WebFetch(domain:pagespeed.web.dev)",
+      "WebFetch(domain:www.debugbear.com)",
+      "WebFetch(domain:www.webpagetest.org)",
+      "WebFetch(domain:www.similarweb.com)",
+      "WebFetch(domain:www.semrush.com)",
+      "WebFetch(domain:gtmetrix.com)"
     ]
   }
 }
