@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zoom — Andy Stone</title>
+  <title>Zoom—Andy Stone</title>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGP9TWEFQ7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,7 +12,7 @@
     gtag('config', 'G-ZGP9TWEFQ7');
   </script>
   <link rel="icon" href="/favicon.ico" />
-  <meta property="og:title" content="From Meetings Platform to Work Operating System — Andy Stone for Zoom" />
+  <meta property="og:title" content="From Meetings Platform to Work Operating System—Andy Stone for Zoom" />
   <meta property="og:description" content="A strategic pitch for Zoom's Digital Experience Lead role, with an analysis of zoom.com and a plan for sharper platform storytelling." />
   <meta property="og:image" content="https://andy.is/og-image-zoom.png" />
   <meta property="og:url" content="https://andy.is/applying-to/zoom/" />
@@ -79,12 +79,6 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .funnel-row {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .funnel-row.visible { opacity: 1; transform: translateY(0); }
     .hit-card {
       opacity: 0;
       transform: translateY(10px);
@@ -95,10 +89,7 @@
       -webkit-backdrop-filter: blur(14px);
     }
     .hit-card.visible { opacity: 1; transform: translateY(0); }
-    @media (max-width: 768px) { .funnel-row { clip-path: none !important; } }
-    .score-green { background: rgba(74,222,128,0.12); color: #86efac; }
-    .score-orange { background: rgba(251,191,36,0.12); color: #fcd34d; }
-    .score-red { background: rgba(248,113,113,0.15); color: #fca5a5; }
+    .btn-gradient { background: linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%); padding: 14px 32px; border-radius: 4px; font-size: 0.9375rem; }
     .btn-cta { transition: transform 0.22s ease, box-shadow 0.22s ease; }
     .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.18); opacity: 1 !important; }
     .btn-outline { transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease; }
@@ -143,54 +134,23 @@
       overflow: hidden;
     }
 
-    /* Journey Map */
+    /* Journey Map - light mode */
     .journey-grid {
       display: grid;
       grid-template-columns: 140px repeat(5, 1fr);
       gap: 2px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(8,12,20,0.06);
+      border: 1px solid rgba(8,12,20,0.08);
       overflow-x: auto;
       min-width: 640px;
     }
-    .journey-cell {
-      padding: 14px 16px;
-      font-size: 0.8rem;
-      line-height: 1.45;
-    }
-    .journey-header { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.55); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; padding: 12px 16px; }
-    .journey-persona { background: rgba(99,102,241,0.1); font-weight: 600; font-size: 0.78rem; color: rgba(255,255,255,0.9); display: flex; align-items: center; }
-    .step-ok { background: rgba(74,222,128,0.08); border-left: 3px solid rgba(74,222,128,0.4); color: rgba(255,255,255,0.75); }
-    .step-warn { background: rgba(251,191,36,0.08); border-left: 3px solid rgba(251,191,36,0.35); color: rgba(255,255,255,0.75); }
-    .step-bad { background: rgba(248,113,113,0.09); border-left: 3px solid rgba(248,113,113,0.4); color: rgba(255,255,255,0.75); }
+    .journey-cell { padding: 14px 16px; font-size: 0.8rem; line-height: 1.45; }
+    .journey-header { background: rgba(8,12,20,0.04); color: rgba(8,12,20,0.5); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; padding: 12px 16px; }
+    .journey-persona { background: rgba(99,102,241,0.07); font-weight: 600; font-size: 0.78rem; color: rgba(8,12,20,0.85); display: flex; align-items: center; }
+    .step-ok { background: rgba(34,197,94,0.09); border-left: 3px solid rgba(34,197,94,0.55); color: rgba(8,12,20,0.8); }
+    .step-warn { background: rgba(234,179,8,0.12); border-left: 3px solid rgba(234,179,8,0.6); color: rgba(8,12,20,0.8); }
+    .step-bad { background: rgba(239,68,68,0.09); border-left: 3px solid rgba(239,68,68,0.55); color: rgba(8,12,20,0.8); }
 
-    /* Audience Segment Cards */
-    .segment-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(99,102,241,0.12);
-      border: 1px solid rgba(99,102,241,0.12);
-    }
-    @media (max-width: 768px) { .segment-grid { grid-template-columns: 1fr; } }
-    .segment-card {
-      background: rgba(8,12,28,0.8);
-      padding: 28px;
-    }
-
-    /* Platform Cluster Cards */
-    .cluster-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: rgba(8,12,20,0.08);
-      border: 1px solid rgba(8,12,20,0.08);
-    }
-    @media (max-width: 768px) { .cluster-grid { grid-template-columns: 1fr; } }
-    .cluster-card {
-      background: #ffffff;
-      padding: 32px;
-    }
     .product-chip {
       display: inline-block;
       font-size: 0.72rem;
@@ -200,12 +160,6 @@
       border: 1px solid rgba(8,12,20,0.1);
       color: rgba(8,12,20,0.65);
       margin: 3px 3px 3px 0;
-    }
-    .cluster-opp {
-      margin-top: 16px;
-      padding: 12px 16px;
-      background: rgba(99,102,241,0.06);
-      border-left: 3px solid rgba(99,102,241,0.5);
     }
 
     /* Framework labels */
@@ -219,8 +173,60 @@
       font-weight: 600;
       margin-bottom: 1rem;
     }
+
+    /* Flip Cards */
+    .flip-card { perspective: 1000px; cursor: pointer; }
+    .flip-card-inner {
+      position: relative; width: 100%; min-height: 270px;
+      transition: transform 0.52s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transform-style: preserve-3d;
+      box-shadow: 0 3px 16px rgba(8,12,20,0.1), 0 1px 4px rgba(8,12,20,0.06);
+      border-radius: 6px;
+    }
+    .flip-card:hover:not(.flipped) .flip-card-inner {
+      box-shadow: 0 14px 40px rgba(8,12,20,0.18), 0 2px 8px rgba(8,12,20,0.08);
+      transform: translateY(-6px) rotate(-0.6deg);
+    }
+    .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card.flipped:hover .flip-card-inner { transform: rotateY(180deg) translateY(-4px); }
+    .flip-front, .flip-back {
+      position: absolute; top: 0; left: 0; width: 100%; min-height: 270px;
+      backface-visibility: hidden; -webkit-backface-visibility: hidden;
+      padding: 28px; border-radius: 6px;
+    }
+    .flip-front { background: white; border: 1px solid rgba(8,12,20,0.1); padding-bottom: 44px; }
+    .flip-front::after {
+      content: "Click to see what they need ↩";
+      position: absolute;
+      bottom: 14px;
+      left: 28px;
+      right: 28px;
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #6366f1;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      pointer-events: none;
+    }
+    .flip-card:hover:not(.flipped) .flip-front::after { opacity: 1; }
+    .flip-back { background: #1e1b4b; color: white; transform: rotateY(180deg); border: 1px solid #312e81; }
+
+    .fw-insight {
+      background: #1e1b4b;
+      color: white;
+      padding: 2.5rem 3rem;
+      margin-top: 2.5rem;
+      border-radius: 4px;
+      border-left: 5px solid #6366f1;
+    }
+
+    @media (max-width: 768px) { .flip-grid { grid-template-columns: 1fr !important; } }
+    @media (max-width: 900px) { .narrative-row { grid-template-columns: 1fr !important; } }
   </style>
-  <link rel="stylesheet" crossorigin href="/assets/style-DjeiAH9r.css">
+  <link rel="stylesheet" crossorigin href="/assets/style-DKcBapMD.css">
 </head>
 <body style="background: #080c14; color: white; position: relative;">
 
@@ -249,12 +255,12 @@
       <div>
         <p class="text-sm font-medium tracking-widest uppercase mb-6" style="color: rgba(255,255,255,0.6);">Strategic Pitch | Zoom</p>
         <h1 class="font-bold leading-none tracking-tight" style="font-size: clamp(2rem, 3.5vw, 3rem);">
-          Zoom made the platform shift. The digital experience should lead what comes next.
+          Zoom has shifted into a full platform for teamwork and needs a digital experience to match this new vision.
         </h1>
       </div>
       <div class="lg:pt-16">
         <p class="text-lg leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          Zoom already has analyst leadership, enterprise wins, and real AI momentum. The opportunity is to make all of that unmistakable — on zoom.com, in every buyer journey, and across every digital touchpoint.
+          Zoom already has analyst leadership, enterprise wins, and real AI momentum. The opportunity is to make all of that unmistakable—on zoom.com, in every buyer journey, and across every digital touchpoint.
         </p>
         <div class="flex gap-10 mt-10 flex-wrap">
           <div>
@@ -275,6 +281,7 @@
     <div class="w-full overflow-hidden" style="aspect-ratio: 16/7;">
       <img src="/images/zoom-hero.png" alt="zoom.com homepage" class="w-full h-full object-cover" />
     </div>
+    <p class="text-base mt-4 px-8 max-w-screen-xl mx-auto" style="color: rgba(255,255,255,0.65);">Zoom.com introduces a few new concepts on the homepage and has the opportunity to push the vision further by showing work getting done.</p>
   </section>
 
   <!-- INTRODUCTION -->
@@ -287,16 +294,15 @@
         <p class="text-2xl leading-snug font-light mb-8" style="color: rgba(255,255,255,0.85);">
           Throughout my career, I've led teams building digital platforms, campaigns, and marketing organizations that turn investment into measurable pipeline and revenue growth.
         </p>
-        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
-          My experience spans founding and scaling two startups through acquisition, and leading global teams within a Fortune 500 company. In my current role at NetApp, the corporate website functions as the primary demand engine — with SEO, GEO, social, and paid inbound feeding directly into campaigns and retargeting programs designed to increase pipeline. I defined the global website strategy and roadmap for a 20,000-page platform across 10 languages, owned the end-to-end digital experience, and led cross-functional collaboration across marketing, engineering, and analytics. In the year after the relaunch, organic traffic doubled and sales-qualified leads generated from the website increased by 11%.
+        <p class="text-lg leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
+          My experience spans founding and scaling two startups through acquisition, and leading global teams within a Fortune 500 company. In my current role at NetApp, the corporate website functions as the primary demand engine, with SEO, GEO, social, and paid inbound feeding directly into campaigns and retargeting programs designed to increase pipeline. I defined the global website strategy and roadmap for a 20,000-page platform across 10 languages, owned the end-to-end digital experience, and led cross-functional collaboration across marketing, engineering, and analytics. In the year after the relaunch, organic traffic doubled and sales-qualified leads generated from the website increased by 11%.
         </p>
-        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
-          I'm drawn to Zoom because you're at a defining moment — shifting from being known for meetings to becoming an AI-first work and customer experience platform. That story is visible in the momentum: Zoom Phone displacing Cisco and Microsoft Teams at enterprise scale, Contact Center's first Gartner Magic Quadrant recognition, AI Companion usage tripling year-over-year. But zoom.com still reads as a meetings company's homepage, not an AI-first work platform's front door. <mark class="hl">This site is meant to start a conversation about what's possible.</mark>
+        <p class="text-lg leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
+          I'm drawn to Zoom because you're at a defining moment—shifting from being known for meetings to becoming an AI-first work and customer experience platform. That story is visible in the momentum: Zoom Phone displacing Cisco and Microsoft Teams at enterprise scale, Contact Center's first Gartner Magic Quadrant recognition, AI Companion usage tripling year-over-year. But zoom.com still reads as a meetings company's homepage, not an AI-first work platform's front door. <mark class="hl">This site is meant to start a conversation about what's possible.</mark>
         </p>
-        <p class="text-base leading-relaxed mb-10" style="color: rgba(255,255,255,0.78);">Thank you,<br>Andy</p>
+        <p class="text-lg leading-relaxed mb-10" style="color: rgba(255,255,255,0.78);">Thank you,<br>Andy</p>
         <a href="/assets/andy-stone-resume-zoom.pdf"
-           class="inline-block font-semibold text-white btn-cta"
-           style="background: linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%); padding: 14px 32px; border-radius: 4px; font-size: 0.9375rem;"
+           class="inline-block font-semibold text-white btn-cta btn-gradient"
            onclick="gtag('event','click',{event_category:'CTA',event_label:'Intro – Download Resume'});">
           Download Resume <span class="btn-arrow">→</span>
         </a>
@@ -311,8 +317,8 @@
       <p class="font-bold leading-tight tracking-tight mb-8" style="font-size: clamp(1.75rem, 3.5vw, 3rem);">
         "We ranked NetApp's homepage the highest overall and specifically in branding because it offers an <mark class="hl">authentic experience.</mark>"
       </p>
-      <p class="text-base" style="color: rgba(255,255,255,0.65);">
-        — Steve Ohanians, Forbes ·
+      <p class="text-xl font-semibold" style="color: #ffffff;">
+        —Steve Ohanians, Forbes ·
         <a href="https://www.forbes.com/councils/forbesagencycouncil/2022/01/13/what-b2b-companies-can-learn-about-ux-from-the-websites-of-leading-fortune-500-companies/?streamIndex=0"
            target="_blank" rel="noopener"
            class="underline underline-offset-2 transition-colors hover:text-white">
@@ -322,248 +328,324 @@
     </div>
   </section>
 
-  <!-- STRATEGY — THE PLATFORM STORY GAP -->
-  <section class="px-8 pt-24 pb-16 max-w-screen-xl mx-auto relative">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-      <div class="lg:col-span-3">
-        <p class="text-sm tracking-widest uppercase" style="color: rgba(255,255,255,0.85);">Strategy</p>
-      </div>
-      <div class="lg:col-span-7">
-        <h2 class="text-3xl font-bold leading-tight mb-6">The Platform Story Gap</h2>
-        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
-          Zoom is one of the most recognized enterprise technology brands in the world — but being recognized for meetings in 2026 is both an asset and a liability. The asset is brand awareness that most companies would pay billions for. The liability is a perception gap: the market still largely thinks of zoom.com as the place where you download the meeting client, not as the front door to an AI-first work and customer experience platform. Analyst firms gave Zoom its 6th consecutive UCaaS Magic Quadrant leadership position, first-ever CCaaS Magic Quadrant inclusion, and the top 16-criteria sweep in Forrester's UCaaS Wave. None of that comes through clearly enough on zoom.com today.
-        </p>
-        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
-          The homepage presents a rich portfolio — Meetings, Contact Center, AI Companion, Phone, Virtual Agent, Revenue Accelerator — but it does so as a flat product directory rather than a connected platform story. Enterprise buyers evaluating whether to displace Cisco or Genesys need clarity fast. Right now, that clarity requires digging through blog posts, scattered analyst badges, and documentation spread across three separate digital destinations. <mark class="hl">A strong digital experience makes the argument before sales ever enters the room.</mark>
-        </p>
-        <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          Below are three frameworks for thinking about where the opportunity lives: a visitor journey map showing how different audiences move (or don't) through the current experience, an audience segmentation model looking at who arrives and what they need, and a platform ecosystem view showing how Zoom's product clusters could be organized as a coordinated narrative instead of a flat grid.
-        </p>
+  <!-- STRATEGY + FRAMEWORKS (light mode) -->
+  <section style="background: #f5f8ff; border-top: 1px solid rgba(8,12,20,0.07); color: #080c14;">
+
+    <!-- Strategy intro -->
+    <div class="px-8 pt-24 pb-0 max-w-screen-xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+        <div class="lg:col-span-3">
+          <p class="text-sm tracking-widest uppercase" style="color: rgba(8,12,20,0.65);">Strategy</p>
+        </div>
+        <div class="lg:col-span-7">
+          <h2 class="text-3xl font-bold leading-tight mb-6" style="color: #080c14;">The Platform Story Gap</h2>
+          <p class="text-lg leading-relaxed mb-4" style="color: rgba(8,12,20,0.75);">
+            Zoom is one of the most recognized enterprise technology brands in the world. Being recognized for meetings in 2026 is both an asset and a liability. The asset is brand awareness that most companies would pay billions for. The liability is a perception gap: the market still largely thinks of zoom.com as the place where you download the meeting client, not as the front door to an AI-first work and customer experience platform. Analyst firms gave Zoom its 6th consecutive UCaaS Magic Quadrant leadership position, its first-ever CCaaS Magic Quadrant inclusion, and the top 16-criteria sweep in Forrester's UCaaS Wave. None of that comes through clearly enough on zoom.com today.
+          </p>
+          <p class="text-lg leading-relaxed mb-4" style="color: rgba(8,12,20,0.75);">
+            The homepage presents a rich portfolio: Meetings, Contact Center, AI Companion, Phone, Virtual Agent, Revenue Accelerator. It presents them as a flat product directory rather than a connected platform story. Enterprise buyers evaluating whether to displace Cisco or Genesys need clarity fast. Right now, that clarity requires digging through blog posts, scattered analyst badges, and documentation spread across three separate digital destinations. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.18) 0%, rgba(168,85,247,0.18) 100%);">A strong digital experience makes the argument before sales ever enters the room.</mark>
+          </p>
+          <p class="text-lg leading-relaxed" style="color: rgba(8,12,20,0.75);">
+            Below are three frameworks for thinking about where the opportunity lives: a visitor journey map showing how different audiences move through the current experience, an audience segmentation model looking at who arrives and what they need, and a platform ecosystem view showing how Zoom's product clusters could be organized as a coordinated narrative.
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- ======================================================= -->
+    <!-- ============================================================ -->
     <!-- FRAMEWORK A: VISITOR JOURNEY MAP -->
-    <!-- ======================================================= -->
-    <div class="mb-20 mt-8">
-      <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; flex-wrap: wrap;">
-        <span class="framework-pill" style="background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3); color: rgba(148,163,252,0.9);">Framework A</span>
-        <h3 class="text-2xl font-bold">Visitor Journey by Audience Type</h3>
+    <!-- ============================================================ -->
+    <div style="background: white; border-top: 1px solid rgba(8,12,20,0.07); border-bottom: 1px solid rgba(8,12,20,0.07);">
+      <div class="px-8 py-16 max-w-screen-xl mx-auto">
+
+        <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; flex-wrap: wrap;">
+          <span class="framework-pill" style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.25); color: #4338ca;">Framework A</span>
+          <h3 class="text-2xl font-bold" style="color: #080c14;">Visitor Journey by Audience Type</h3>
+        </div>
+        <p class="text-base mb-8" style="color: rgba(8,12,20,0.7); max-width: 680px; line-height: 1.6;">Three audiences currently navigate zoom.com very differently. The platform's biggest growth targets, enterprise phone displacement and contact center evaluation, are also where the current experience creates the most friction.</p>
+
+        <div style="overflow-x: auto; margin-left: -2rem; margin-right: -2rem; padding-left: 2rem; padding-right: 2rem; -webkit-overflow-scrolling: touch;">
+          <div class="journey-grid" style="min-width: 700px;">
+
+            <!-- Header row -->
+            <div class="journey-header">Audience</div>
+            <div class="journey-header">Discovery</div>
+            <div class="journey-header">Homepage</div>
+            <div class="journey-header">Exploration</div>
+            <div class="journey-header">Conversion</div>
+            <div class="journey-header">After</div>
+
+            <!-- IT / UCaaS Buyer -->
+            <div class="journey-cell journey-persona">IT / UCaaS Buyer</div>
+            <div class="journey-cell step-ok">Google: "Teams phone alternative" or "Cisco replacement"</div>
+            <div class="journey-cell step-warn">Lands on homepage. Meetings-first message, no UCaaS consolidation story above fold.</div>
+            <div class="journey-cell step-warn">Phone page exists but takes 2–3 nav clicks to find; no displacement narrative</div>
+            <div class="journey-cell step-bad">7-field demo form, same for everyone, no lighter enterprise path</div>
+            <div class="journey-cell step-bad">No visible nurture sequence or proof architecture post-submission</div>
+
+            <!-- CX / Contact Center Lead -->
+            <div class="journey-cell journey-persona">CX / Contact Center Lead</div>
+            <div class="journey-cell step-ok">Reads Gartner CCaaS Magic Quadrant → searches Zoom Contact Center</div>
+            <div class="journey-cell step-bad">Homepage leads with meetings. No CCaaS message or Gartner badge visible above fold.</div>
+            <div class="journey-cell step-warn">Contact Center page found after digging; competitive differentiation thin</div>
+            <div class="journey-cell step-bad">Same 7-field form; no CX-specific conversion path or ROI framing</div>
+            <div class="journey-cell step-bad">No competitive displacement narrative against Genesys or Talkdesk</div>
+
+            <!-- SMB / Self-Serve -->
+            <div class="journey-cell journey-persona">SMB / Self-Serve</div>
+            <div class="journey-cell step-ok">Word of mouth, branded search — already knows Zoom</div>
+            <div class="journey-cell step-ok">Pricing is easy to find; hero CTAs are clear and functional</div>
+            <div class="journey-cell step-ok">Gets to sign-up with minimal friction</div>
+            <div class="journey-cell step-ok">Self-serve sign-up flow works smoothly ✓</div>
+            <div class="journey-cell step-ok">In-product onboarding continues the experience ✓</div>
+
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-8 justify-center">
+          <span style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+            <span style="width:20px; height:20px; background: rgb(34,197,94); display:inline-block; border-radius:3px;"></span>
+            <span style="font-size:0.875rem; font-weight:600; color: rgba(8,12,20,0.8);">Working well</span>
+          </span>
+          <span style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+            <span style="width:20px; height:20px; background: rgb(234,179,8); display:inline-block; border-radius:3px;"></span>
+            <span style="font-size:0.875rem; font-weight:600; color: rgba(8,12,20,0.8);">Friction or gap</span>
+          </span>
+          <span style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+            <span style="width:20px; height:20px; background: rgb(239,68,68); display:inline-block; border-radius:3px;"></span>
+            <span style="font-size:0.875rem; font-weight:600; color: rgba(8,12,20,0.8);">Missing or broken</span>
+          </span>
+        </div>
+
+        <div class="fw-insight">
+          <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(165,180,252,0.7); margin-bottom: 1rem; font-weight: 600;">How to think about Framework A</p>
+          <p style="font-size: 1.15rem; font-weight: 600; line-height: 1.55; color: rgba(255,255,255,0.95); max-width: 740px;">zoom.com works beautifully for the audience it already has. The enterprise buyers who represent Zoom's growth story hit friction at nearly every stage. The opportunity is building distinct pathways: the right narrative, proof, and conversion path for each audience type, without disrupting the self-serve flow that already works.</p>
+        </div>
+
       </div>
-      <p class="text-sm mb-8" style="color: rgba(255,255,255,0.55); max-width: 680px; line-height: 1.6;">Three audiences currently navigate zoom.com very differently. The platform's biggest growth targets — enterprise phone displacement, contact center evaluation — are also where the current experience creates the most friction.</p>
+    </div>
 
-      <div style="overflow-x: auto;">
-        <div class="journey-grid" style="min-width: 700px;">
+    <!-- ============================================================ -->
+    <!-- FRAMEWORK B: AUDIENCE SEGMENTATION (flip cards) -->
+    <!-- ============================================================ -->
+    <div style="background: #f5f8ff; border-bottom: 1px solid rgba(8,12,20,0.07);">
+      <div class="px-8 py-16 max-w-screen-xl mx-auto">
 
-          <!-- Header row -->
-          <div class="journey-header">Audience</div>
-          <div class="journey-header">Discovery</div>
-          <div class="journey-header">Homepage</div>
-          <div class="journey-header">Exploration</div>
-          <div class="journey-header">Conversion</div>
-          <div class="journey-header">After</div>
+        <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; flex-wrap: wrap;">
+          <span class="framework-pill" style="background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.25); color: #6d28d9;">Framework B</span>
+          <h3 class="text-2xl font-bold" style="color: #080c14;">Audience Segmentation: Six Paths, One Homepage</h3>
+        </div>
+        <p class="text-base mb-8" style="color: rgba(8,12,20,0.7); max-width: 680px; line-height: 1.6;">Six meaningfully different buyer types land on zoom.com with different questions, different competitive contexts, and different things they need to feel confident moving forward. Today, all six see the same default experience.</p>
 
-          <!-- IT / UCaaS Buyer -->
-          <div class="journey-cell journey-persona">IT / UCaaS Buyer</div>
-          <div class="journey-cell step-ok">Google: "Teams phone alternative" or "Cisco replacement"</div>
-          <div class="journey-cell step-warn">Lands on homepage — meetings-first message, no UCaaS consolidation story above fold</div>
-          <div class="journey-cell step-warn">Phone page exists but takes 2–3 nav clicks to find; no displacement narrative</div>
-          <div class="journey-cell step-bad">7-field demo form — same for everyone, no lighter enterprise path</div>
-          <div class="journey-cell step-bad">No visible nurture sequence or proof architecture post-submission</div>
+        <!-- Clickable tooltip hint -->
+        <div style="margin-bottom: 1.75rem;">
+          <span style="display: inline-flex; align-items: center; gap: 10px; background: white; border: 1px solid rgba(99,102,241,0.25); padding: 10px 18px; border-radius: 9999px; font-size: 0.82rem; color: #4338ca; font-weight: 500; box-shadow: 0 2px 8px rgba(99,102,241,0.1);">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3.5a.75.75 0 110 1.5.75.75 0 010-1.5zM6.75 7h1.5v4.5h-1.5V7z" fill="#6366f1"/></svg>
+            Click any card to flip it and see what that buyer type actually needs from Zoom
+          </span>
+        </div>
+
+        <!-- Flip card grid -->
+        <div class="flip-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+
+          <!-- IT / Infrastructure Lead -->
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: #6366f1; font-weight: 700; margin-bottom: 12px;">IT / Infrastructure Lead</p>
+                <p style="font-size: 0.95rem; font-weight: 700; color: #080c14; line-height: 1.4; margin-bottom: 14px;">"Can Zoom replace our Cisco or Teams stack without disruption?"</p>
+                <p style="font-size: 0.8rem; line-height: 1.55; color: rgba(8,12,20,0.6);"><strong style="color: rgba(8,12,20,0.78);">Gets today:</strong> Meetings-forward homepage, Phone page buried in the Products nav, feature comparisons scattered in blog posts.</p>
+              </div>
+              <div class="flip-back">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(165,180,252,0.7); font-weight: 700; margin-bottom: 14px;">What they need</p>
+                <p style="font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.9);">A displacement narrative with migration support. TCO comparison against Cisco and Teams. Enterprise reliability proof. A direct path to Phone + Workplace case studies from similarly-sized companies.</p>
+              </div>
+            </div>
+          </div>
 
           <!-- CX / Contact Center Lead -->
-          <div class="journey-cell journey-persona">CX / Contact Center Lead</div>
-          <div class="journey-cell step-ok">Reads Gartner CCaaS Magic Quadrant → searches Zoom Contact Center</div>
-          <div class="journey-cell step-bad">Homepage leads with meetings; no CCaaS message or Gartner badge visible above fold</div>
-          <div class="journey-cell step-warn">Contact Center page found after digging; competitive differentiation thin</div>
-          <div class="journey-cell step-bad">Same 7-field form; no CX-specific conversion path or ROI framing</div>
-          <div class="journey-cell step-bad">No competitive displacement narrative against Genesys or Talkdesk</div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: #6366f1; font-weight: 700; margin-bottom: 12px;">CX / Contact Center Lead</p>
+                <p style="font-size: 0.95rem; font-weight: 700; color: #080c14; line-height: 1.4; margin-bottom: 14px;">"Is Zoom's contact center mature enough to replace Genesys?"</p>
+                <p style="font-size: 0.8rem; line-height: 1.55; color: rgba(8,12,20,0.6);"><strong style="color: rgba(8,12,20,0.78);">Gets today:</strong> A Contact Center product page, but the first-ever Gartner CCaaS Magic Quadrant milestone isn't surfaced prominently. AI is described, not demonstrated.</p>
+              </div>
+              <div class="flip-back">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(165,180,252,0.7); font-weight: 700; margin-bottom: 14px;">What they need</p>
+                <p style="font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.9);">Head-to-head competitive clarity against Genesys and Talkdesk. ROI framing around AI deflection rates. Interactive demos showing Virtual Agent in context. The Gartner milestone front and center.</p>
+              </div>
+            </div>
+          </div>
 
-          <!-- SMB / Self-Serve -->
-          <div class="journey-cell journey-persona">SMB / Self-Serve</div>
-          <div class="journey-cell step-ok">Word of mouth, branded search — already knows Zoom</div>
-          <div class="journey-cell step-ok">Pricing is easy to find; hero CTAs are clear and functional</div>
-          <div class="journey-cell step-ok">Gets to sign-up with minimal friction</div>
-          <div class="journey-cell step-ok">Self-serve sign-up flow works smoothly ✓</div>
-          <div class="journey-cell step-ok">In-product onboarding continues the experience ✓</div>
+          <!-- HR / People Lead -->
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: #6366f1; font-weight: 700; margin-bottom: 12px;">HR / People Lead</p>
+                <p style="font-size: 0.95rem; font-weight: 700; color: #080c14; line-height: 1.4; margin-bottom: 14px;">"Can Zoom help us build a better hybrid work culture?"</p>
+                <p style="font-size: 0.8rem; line-height: 1.55; color: rgba(8,12,20,0.6);"><strong style="color: rgba(8,12,20,0.78);">Gets today:</strong> Workplace features page with a broad product list. No employee experience narrative or people-centric use cases front and center.</p>
+              </div>
+              <div class="flip-back">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(165,180,252,0.7); font-weight: 700; margin-bottom: 14px;">What they need</p>
+                <p style="font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.9);">Employee productivity outcomes. Async work stories centered on Clips, Docs, and My Notes. A journey that connects HR to IT for joint evaluation, since this decision rarely lives with one team.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sales / Revenue Lead -->
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: #6366f1; font-weight: 700; margin-bottom: 12px;">Sales / Revenue Lead</p>
+                <p style="font-size: 0.95rem; font-weight: 700; color: #080c14; line-height: 1.4; margin-bottom: 14px;">"Can Zoom's AI actually help my team close deals faster?"</p>
+                <p style="font-size: 0.8rem; line-height: 1.55; color: rgba(8,12,20,0.6);"><strong style="color: rgba(8,12,20,0.78);">Gets today:</strong> Revenue Accelerator is a real product but buried three levels deep. No sales-specific journey or outcome data visible on the homepage.</p>
+              </div>
+              <div class="flip-back">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(165,180,252,0.7); font-weight: 700; margin-bottom: 14px;">What they need</p>
+                <p style="font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.9);">AI-assisted sales room narratives. Before/after productivity data with real numbers. A path that doesn't require already knowing "Revenue Accelerator" exists as a product name.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontline Operations -->
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: #6366f1; font-weight: 700; margin-bottom: 12px;">Frontline Operations</p>
+                <p style="font-size: 0.95rem; font-weight: 700; color: #080c14; line-height: 1.4; margin-bottom: 14px;">"Does Zoom actually work for workers who aren't at a desk?"</p>
+                <p style="font-size: 0.8rem; line-height: 1.55; color: rgba(8,12,20,0.6);"><strong style="color: rgba(8,12,20,0.78);">Gets today:</strong> A Frontline product page that requires active searching. No industry-specific entry points for healthcare, retail, or logistics from the homepage.</p>
+              </div>
+              <div class="flip-back">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(165,180,252,0.7); font-weight: 700; margin-bottom: 14px;">What they need</p>
+                <p style="font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.9);">Industry-specific use cases with deployment stories. A clear path that acknowledges the "we've always used Zoom for HQ, not the floor" starting point and meets them there.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Developer -->
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: #6366f1; font-weight: 700; margin-bottom: 12px;">Developer / ISV Partner</p>
+                <p style="font-size: 0.95rem; font-weight: 700; color: #080c14; line-height: 1.4; margin-bottom: 14px;">"Can I build meaningful integrations on top of Zoom's platform?"</p>
+                <p style="font-size: 0.8rem; line-height: 1.55; color: rgba(8,12,20,0.6);"><strong style="color: rgba(8,12,20,0.78);">Gets today:</strong> A developer portal and App Marketplace exist as separate destinations, but there's no "build on Zoom" narrative in the main marketing experience.</p>
+              </div>
+              <div class="flip-back">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(165,180,252,0.7); font-weight: 700; margin-bottom: 14px;">What they need</p>
+                <p style="font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.9);">An integration ecosystem story. AI SDK positioning front and center. Pathways that turn marketing visits into developer sign-ups rather than bounces to a separate destination.</p>
+              </div>
+            </div>
+          </div>
 
         </div>
-      </div>
 
-      <div class="mt-6 flex flex-wrap gap-4 text-xs" style="color: rgba(255,255,255,0.45);">
-        <span style="display:flex; align-items:center; gap:6px;"><span style="width:10px; height:10px; background: rgba(74,222,128,0.4); display:inline-block; border-radius:2px;"></span> Working well</span>
-        <span style="display:flex; align-items:center; gap:6px;"><span style="width:10px; height:10px; background: rgba(251,191,36,0.4); display:inline-block; border-radius:2px;"></span> Friction or gap</span>
-        <span style="display:flex; align-items:center; gap:6px;"><span style="width:10px; height:10px; background: rgba(248,113,113,0.45); display:inline-block; border-radius:2px;"></span> Missing or broken</span>
-      </div>
+        <div class="fw-insight" style="background: #1e1b4b; border-left-color: #a78bfa;">
+          <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(196,181,253,0.7); margin-bottom: 1rem; font-weight: 600;">How to think about Framework B</p>
+          <p style="font-size: 1.15rem; font-weight: 600; line-height: 1.55; color: rgba(255,255,255,0.95); max-width: 740px;">Each buyer type has a different north star metric, a different competitive context, and a different trust threshold. A single generic homepage can't address all six. Even lightweight role-based journeys, starting with a simple "what are you trying to solve?", would meaningfully increase the relevance of every visit.</p>
+        </div>
 
-      <div class="mt-6 p-5 text-sm leading-relaxed" style="background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.18); color: rgba(255,255,255,0.72); max-width: 780px;">
-        <strong style="color: rgba(255,255,255,0.88);">The pattern:</strong> zoom.com is well-built for the audience it already has — SMB users who know what Zoom is and want to sign up. The enterprise buyers who represent Zoom's growth story hit friction at almost every stage. The opportunity is to build distinct pathways that meet each audience with the right narrative, the right proof, and the right conversion path.
       </div>
     </div>
 
-    <!-- ======================================================= -->
-    <!-- FRAMEWORK B: AUDIENCE SEGMENTATION MODEL -->
-    <!-- ======================================================= -->
-    <div class="mb-20">
-      <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; flex-wrap: wrap;">
-        <span class="framework-pill" style="background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.28); color: rgba(216,180,254,0.85);">Framework B</span>
-        <h3 class="text-2xl font-bold">Audience Segmentation: Six Paths, One Homepage</h3>
-      </div>
-      <p class="text-sm mb-8" style="color: rgba(255,255,255,0.55); max-width: 680px; line-height: 1.6;">Six meaningfully different buyer types land on zoom.com with different questions, different competitive contexts, and different things they need to feel confident moving forward. Today, all six see the same default experience.</p>
+    <!-- ============================================================ -->
+    <!-- FRAMEWORK C: PLATFORM CLUSTERS — two design options -->
+    <!-- ============================================================ -->
+    <div style="background: white; border-bottom: 1px solid rgba(8,12,20,0.07);">
+      <div class="px-8 py-16 max-w-screen-xl mx-auto">
 
-      <div class="segment-grid">
+        <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; flex-wrap: wrap;">
+          <span class="framework-pill" style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.25); color: #4338ca;">Framework C</span>
+          <h3 class="text-2xl font-bold" style="color: #080c14;">Platform Clusters and Where the Story Gets Lost</h3>
+        </div>
+        <p class="text-base mb-10" style="color: rgba(8,12,20,0.7); max-width: 680px; line-height: 1.6;">Zoom's portfolio has matured into four distinct product clusters, each with its own competitive narrative and growth story. On zoom.com today, all twelve products appear in a flat grid. The clusters and their strategic meaning are invisible.</p>
 
-        <!-- IT / Infrastructure Lead -->
-        <div class="segment-card">
-          <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(148,163,252,0.7);">IT / Infrastructure Lead</p>
-          <p class="text-sm font-semibold mb-3 text-white">"Can Zoom replace our Cisco or Teams stack without disruption?"</p>
-          <p class="text-xs leading-relaxed mb-3" style="color: rgba(255,255,255,0.55);"><strong style="color: rgba(255,255,255,0.72);">Gets today:</strong> Meetings-forward homepage, Phone page buried in the Products nav, feature comparisons in blog posts.</p>
-          <p class="text-xs leading-relaxed" style="color: rgba(148,163,252,0.75);"><strong>Needs:</strong> Displacement narrative with migration support, TCO comparison, enterprise reliability proof, and a direct path to Phone + Workplace case studies.</p>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+
+          <!-- Workplace -->
+            <div style="background: white; border: 1px solid rgba(8,12,20,0.09); border-radius: 6px; padding: 28px 24px; position: relative; overflow: hidden; border-top: 3px solid #6366f1;">
+              <div style="position: absolute; bottom: -20px; right: -12px; font-size: 7rem; font-weight: 900; color: rgba(99,102,241,0.07); line-height: 1; pointer-events: none; user-select: none;">01</div>
+              <p style="font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.15em; color: #6366f1; font-weight: 700; margin-bottom: 6px;">Cluster 01</p>
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: #080c14; margin-bottom: 16px; line-height: 1.2;">Workplace</h4>
+              <div style="display: flex; flex-direction: column; gap: 3px; margin-bottom: 20px; border-bottom: 1px solid rgba(8,12,20,0.07); padding-bottom: 16px;">
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">Meetings</span>
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">Chat</span>
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">Whiteboard · Docs</span>
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">My Notes · Clips</span>
+              </div>
+              <p style="font-size: 0.78rem; line-height: 1.6; color: rgba(8,12,20,0.68);">The async + sync work hub story isn't being told. Forrester credited "work persistence" as a strength. The website doesn't know this.</p>
+            </div>
+
+            <!-- Customer Experience -->
+            <div style="background: white; border: 1px solid rgba(8,12,20,0.09); border-radius: 6px; padding: 28px 24px; position: relative; overflow: hidden; border-top: 3px solid #a21caf;">
+              <div style="position: absolute; bottom: -20px; right: -12px; font-size: 7rem; font-weight: 900; color: rgba(162,28,175,0.07); line-height: 1; pointer-events: none; user-select: none;">02</div>
+              <p style="font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.15em; color: #a21caf; font-weight: 700; margin-bottom: 6px;">Cluster 02</p>
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: #080c14; margin-bottom: 16px; line-height: 1.2;">Customer Experience</h4>
+              <div style="display: flex; flex-direction: column; gap: 3px; margin-bottom: 20px; border-bottom: 1px solid rgba(8,12,20,0.07); padding-bottom: 16px;">
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">Contact Center</span>
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">Virtual Agent</span>
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">Revenue Accelerator</span>
+              </div>
+              <p style="font-size: 0.78rem; line-height: 1.6; color: rgba(8,12,20,0.68);">Fastest-growing cluster. 7 of the top 10 Q4 deals displaced competitors. The Gartner CCaaS first-ever inclusion should be impossible to miss.</p>
+            </div>
+
+            <!-- Communications -->
+            <div style="background: white; border: 1px solid rgba(8,12,20,0.09); border-radius: 6px; padding: 28px 24px; position: relative; overflow: hidden; border-top: 3px solid #0369a1;">
+              <div style="position: absolute; bottom: -20px; right: -12px; font-size: 7rem; font-weight: 900; color: rgba(3,105,161,0.07); line-height: 1; pointer-events: none; user-select: none;">03</div>
+              <p style="font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.15em; color: #0369a1; font-weight: 700; margin-bottom: 6px;">Cluster 03</p>
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: #080c14; margin-bottom: 16px; line-height: 1.2;">Communications</h4>
+              <div style="display: flex; flex-direction: column; gap: 3px; margin-bottom: 20px; border-bottom: 1px solid rgba(8,12,20,0.07); padding-bottom: 16px;">
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">Phone</span>
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">Rooms</span>
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">Events · Webinars</span>
+              </div>
+              <p style="font-size: 0.78rem; line-height: 1.6; color: rgba(8,12,20,0.68);">Phone displaced Cisco at a Fortune 10 company (140K seats). The best proof points in the company are living in a press release.</p>
+            </div>
+
+            <!-- AI Platform -->
+            <div style="background: white; border: 1px solid rgba(8,12,20,0.09); border-radius: 6px; padding: 28px 24px; position: relative; overflow: hidden; border-top: 3px solid #b45309;">
+              <div style="position: absolute; bottom: -20px; right: -12px; font-size: 7rem; font-weight: 900; color: rgba(180,83,9,0.07); line-height: 1; pointer-events: none; user-select: none;">04</div>
+              <p style="font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.15em; color: #b45309; font-weight: 700; margin-bottom: 6px;">Cluster 04</p>
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: #080c14; margin-bottom: 16px; line-height: 1.2;">AI Platform</h4>
+              <div style="display: flex; flex-direction: column; gap: 3px; margin-bottom: 20px; border-bottom: 1px solid rgba(8,12,20,0.07); padding-bottom: 16px;">
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">AI Companion</span>
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">Custom AI Add-on</span>
+                <span style="font-size: 0.78rem; color: rgba(8,12,20,0.6); padding: 3px 0;">AI SDK · My Notes</span>
+              </div>
+              <p style="font-size: 0.78rem; line-height: 1.6; color: rgba(8,12,20,0.68);">AI Companion MAUs tripled year-over-year. The AI story is told in marketing language. It should be told in before/after workflows against Microsoft Copilot.</p>
+            </div>
+
         </div>
 
-        <!-- CX / Contact Center Lead -->
-        <div class="segment-card">
-          <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(148,163,252,0.7);">CX / Contact Center Lead</p>
-          <p class="text-sm font-semibold mb-3 text-white">"Is Zoom's contact center mature enough to replace Genesys?"</p>
-          <p class="text-xs leading-relaxed mb-3" style="color: rgba(255,255,255,0.55);"><strong style="color: rgba(255,255,255,0.72);">Gets today:</strong> A Contact Center product page that exists, but the first-ever Gartner CCaaS Magic Quadrant milestone isn't surfaced prominently. AI is described, not demonstrated.</p>
-          <p class="text-xs leading-relaxed" style="color: rgba(148,163,252,0.75);"><strong>Needs:</strong> Head-to-head competitive clarity, ROI framing around AI deflection rates, and interactive demos showing Virtual Agent in context.</p>
+        <div class="fw-insight">
+          <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(165,180,252,0.7); margin-bottom: 1rem; font-weight: 600;">How to think about Framework C</p>
+          <p style="font-size: 1.15rem; font-weight: 600; line-height: 1.55; color: rgba(255,255,255,0.95); max-width: 740px;">Each cluster has a distinct competitive story, distinct buyer, and distinct set of proof points. When they're presented as a flat grid of icons, those stories collapse into noise. Organizing the digital experience around clusters, with narrative, proof, and conversion paths tailored to each, is the highest-leverage structural change available without touching the product itself.</p>
         </div>
 
-        <!-- HR / People Lead -->
-        <div class="segment-card">
-          <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(148,163,252,0.7);">HR / People Lead</p>
-          <p class="text-sm font-semibold mb-3 text-white">"Can Zoom help us build a better hybrid work culture?"</p>
-          <p class="text-xs leading-relaxed mb-3" style="color: rgba(255,255,255,0.55);"><strong style="color: rgba(255,255,255,0.72);">Gets today:</strong> Workplace features page with a broad product list. No employee experience narrative or people-centric use cases front and center.</p>
-          <p class="text-xs leading-relaxed" style="color: rgba(148,163,252,0.75);"><strong>Needs:</strong> Employee productivity outcomes, async work stories (Clips, Docs, My Notes), and a journey that connects to IT for joint evaluation.</p>
-        </div>
-
-        <!-- Sales / Revenue Lead -->
-        <div class="segment-card">
-          <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(148,163,252,0.7);">Sales / Revenue Lead</p>
-          <p class="text-sm font-semibold mb-3 text-white">"Can Zoom's AI actually help my team close deals faster?"</p>
-          <p class="text-xs leading-relaxed mb-3" style="color: rgba(255,255,255,0.55);"><strong style="color: rgba(255,255,255,0.72);">Gets today:</strong> Revenue Accelerator is a real product but it's buried three levels deep in navigation. No sales-specific journey or outcome data visible on the homepage.</p>
-          <p class="text-xs leading-relaxed" style="color: rgba(148,163,252,0.75);"><strong>Needs:</strong> AI-assisted sales room narratives, before/after productivity data, and a path that doesn't require already knowing "Revenue Accelerator" exists.</p>
-        </div>
-
-        <!-- Frontline Operations -->
-        <div class="segment-card">
-          <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(148,163,252,0.7);">Frontline Operations</p>
-          <p class="text-sm font-semibold mb-3 text-white">"Does Zoom actually work for workers who aren't at a desk?"</p>
-          <p class="text-xs leading-relaxed mb-3" style="color: rgba(255,255,255,0.55);"><strong style="color: rgba(255,255,255,0.72);">Gets today:</strong> A Frontline product page exists, but it requires active searching. No industry-specific entry points (healthcare, retail, logistics) visible from the homepage.</p>
-          <p class="text-xs leading-relaxed" style="color: rgba(148,163,252,0.75);"><strong>Needs:</strong> Industry-specific use cases with deployment stories, and a clear path that acknowledges the "we've always used Zoom for HQ, not the floor" starting point.</p>
-        </div>
-
-        <!-- Developer -->
-        <div class="segment-card">
-          <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(148,163,252,0.7);">Developer / ISV Partner</p>
-          <p class="text-sm font-semibold mb-3 text-white">"Can I build meaningful integrations on top of Zoom's platform?"</p>
-          <p class="text-xs leading-relaxed mb-3" style="color: rgba(255,255,255,0.55);"><strong style="color: rgba(255,255,255,0.72);">Gets today:</strong> A developer portal and App Marketplace exist as separate destinations, but there's no "build on Zoom" narrative visible in the main marketing experience.</p>
-          <p class="text-xs leading-relaxed" style="color: rgba(148,163,252,0.75);"><strong>Needs:</strong> An integration ecosystem story, AI SDK positioning, and pathways that turn marketing visits into developer sign-ups rather than bounces.</p>
-        </div>
-
-      </div>
-
-      <div class="mt-6 p-5 text-sm leading-relaxed" style="background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.18); color: rgba(255,255,255,0.72); max-width: 780px;">
-        <strong style="color: rgba(255,255,255,0.88);">The pattern:</strong> Each buyer type has a different north star metric, a different competitive context, and a different trust threshold. A single generic homepage can't address all six. Role-based journeys — even lightweight ones that start with a simple "what are you trying to solve?" — would meaningfully increase the relevance of every visit.
       </div>
     </div>
+
   </section>
 
-  <!-- FRAMEWORK C: PLATFORM ECOSYSTEM — on light bg for contrast -->
-  <section class="relative" style="background: #eef2fc; border-top: 1px solid rgba(8,12,20,0.07); color: #080c14;">
-  <div class="px-8 py-16 max-w-screen-xl mx-auto">
-    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; flex-wrap: wrap;">
-      <span class="framework-pill" style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.25); color: #4338ca;">Framework C</span>
-      <h3 class="text-2xl font-bold" style="color: #080c14;">Platform Clusters and Where the Story Gets Lost</h3>
-    </div>
-    <p class="text-sm mb-10" style="color: rgba(8,12,20,0.55); max-width: 680px; line-height: 1.6;">Zoom's portfolio has matured into four distinct product clusters, each with its own competitive narrative and growth story. On zoom.com today, all twelve products appear in a flat grid. The clusters and their strategic meaning are invisible.</p>
-
-    <div class="cluster-grid">
-
-      <!-- Workplace -->
-      <div class="cluster-card">
-        <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.45);">Cluster 01</p>
-        <h4 class="text-lg font-bold mb-4" style="color: #080c14;">Workplace</h4>
-        <div class="mb-4">
-          <span class="product-chip">Meetings</span>
-          <span class="product-chip">Chat</span>
-          <span class="product-chip">Whiteboard</span>
-          <span class="product-chip">Docs</span>
-          <span class="product-chip">My Notes</span>
-          <span class="product-chip">Clips</span>
+  <!-- "THAT'S NOT A CRITICISM" — prominent bridge section -->
+  <section style="background: linear-gradient(135deg, #1a1344 0%, #1e1b4b 60%, #2d1f6e 100%); border-top: 4px solid #4f46e5; border-bottom: 4px solid #4f46e5; color: white;">
+    <div class="px-8 py-20 max-w-screen-xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-3">
+          <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(165,180,252,0.65); margin-bottom: 1.25rem; font-weight: 600; line-height: 1.8;">A note on this analysis</p>
+          <div style="width: 36px; height: 3px; background: #818cf8;"></div>
         </div>
-        <div class="cluster-opp">
-          <p class="text-xs font-semibold mb-1" style="color: #4338ca;">Digital Experience Opportunity</p>
-          <p class="text-xs leading-relaxed" style="color: rgba(8,12,20,0.65);">These six products together tell a story about the async + sync work hub — but they're presented as individual features rather than a unified system. The "work persistence" story that Forrester specifically credited as a strength has no equivalent narrative on the website.</p>
+        <div class="lg:col-span-7">
+          <p style="font-size: clamp(1.35rem, 2.5vw, 1.75rem); font-weight: 300; line-height: 1.5; color: white; margin-bottom: 1.5rem;">
+            "That's not a criticism of the product or the team."
+          </p>
+          <p class="text-lg leading-relaxed" style="color: rgba(199,210,254,0.9);">
+            What all three frameworks reveal is the same thing: zoom.com is well-built for the audience it already has. People who know what Zoom is and want to sign up have a smooth path. Enterprise buyers evaluating a Cisco displacement, CX leaders comparing Zoom to Genesys, IT leaders building the internal business case — those journeys are harder than they need to be.
+          </p>
+          <p class="text-lg leading-relaxed mt-4" style="color: rgba(199,210,254,0.85);">
+            This is a reflection of how fast the portfolio has grown. A digital experience that catches up to the platform's actual depth would close the gap between what Zoom has proven in enterprise deals and what any buyer can understand in the first three minutes on the site. Everything here is an opportunity, not a complaint. That gap is a genuinely exciting problem to work on.
+          </p>
         </div>
-      </div>
-
-      <!-- Customer Experience -->
-      <div class="cluster-card">
-        <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.45);">Cluster 02</p>
-        <h4 class="text-lg font-bold mb-4" style="color: #080c14;">Customer Experience</h4>
-        <div class="mb-4">
-          <span class="product-chip">Contact Center</span>
-          <span class="product-chip">Virtual Agent</span>
-          <span class="product-chip">Revenue Accelerator</span>
-        </div>
-        <div class="cluster-opp">
-          <p class="text-xs font-semibold mb-1" style="color: #4338ca;">Digital Experience Opportunity</p>
-          <p class="text-xs leading-relaxed" style="color: rgba(8,12,20,0.65);">This cluster is Zoom's fastest-growing revenue area — high double-digit Contact Center ARR growth, 7 of the top 10 Q4 deals displacing competitors, Virtual Agent in a near-7-figure retail deal. None of that urgency and momentum comes through on the CX section of zoom.com. The Gartner CCaaS first-ever inclusion should be impossible to miss for any CX-focused visitor.</p>
-        </div>
-      </div>
-
-      <!-- Communications -->
-      <div class="cluster-card">
-        <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.45);">Cluster 03</p>
-        <h4 class="text-lg font-bold mb-4" style="color: #080c14;">Communications</h4>
-        <div class="mb-4">
-          <span class="product-chip">Phone</span>
-          <span class="product-chip">Rooms</span>
-          <span class="product-chip">Events</span>
-          <span class="product-chip">Webinars</span>
-        </div>
-        <div class="cluster-opp">
-          <p class="text-xs font-semibold mb-1" style="color: #4338ca;">Digital Experience Opportunity</p>
-          <p class="text-xs leading-relaxed" style="color: rgba(8,12,20,0.65);">Zoom Phone displaced Cisco at a Fortune 10 company (140,000 seats) and added nearly 50,000 seats at a single global bank in Q4. These are some of the most compelling proof points in the entire company's story — and they're living in a press release, not front and center in the phone product experience on zoom.com.</p>
-        </div>
-      </div>
-
-      <!-- AI Platform -->
-      <div class="cluster-card">
-        <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.45);">Cluster 04</p>
-        <h4 class="text-lg font-bold mb-4" style="color: #080c14;">AI Platform</h4>
-        <div class="mb-4">
-          <span class="product-chip">AI Companion</span>
-          <span class="product-chip">Custom AI Add-on</span>
-          <span class="product-chip">AI SDK</span>
-          <span class="product-chip">My Notes</span>
-        </div>
-        <div class="cluster-opp">
-          <p class="text-xs font-semibold mb-1" style="color: #4338ca;">Digital Experience Opportunity</p>
-          <p class="text-xs leading-relaxed" style="color: rgba(8,12,20,0.65);">AI Companion monthly active users tripled year-over-year, every top 10 Contact Center deal included paid AI, and the Custom AI add-on enables agentic workflows across third-party enterprise systems. The AI story on zoom.com is told in marketing language. It should be told in before/after workflows, interactive demos, and side-by-side comparisons with Microsoft Copilot — where Zoom's "AI included" pricing model is a decisive advantage.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="mt-6 p-5 text-sm leading-relaxed" style="background: rgba(99,102,241,0.06); border-left: 3px solid #6366f1; color: rgba(8,12,20,0.7); max-width: 780px;">
-      <strong style="color: #080c14;">The pattern:</strong> Each cluster has a distinct competitive story, distinct buyer, and distinct set of proof points. When they're presented as a flat grid of icons, those stories collapse into noise. Organizing the digital experience around clusters — with narrative, proof, and conversion paths tailored to each — is the highest-leverage structural change available without touching the product itself.
-    </div>
-  </div>
-  </section>
-
-  <!-- POST-FRAMEWORKS COPY -->
-  <section class="px-8 pt-16 pb-12 max-w-screen-xl mx-auto relative">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-      <div class="lg:col-span-3"></div>
-      <div class="lg:col-span-7">
-        <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
-          What all three frameworks reveal is the same insight: zoom.com is well-built for the audience it already had — people who know what Zoom is and want to download the app or sign up for a plan. The enterprise buyer evaluating whether to displace Cisco, the CX leader comparing Zoom to Genesys, the IT leader making the internal business case for Zoom Workplace — those journeys are harder than they need to be.
-        </p>
-        <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">
-          That's not a criticism of the product or the team. It's a reflection of how fast the portfolio has grown. A digital experience that catches up to the platform's actual depth would close the gap between what Zoom has proven in enterprise deals and what any buyer can understand in the first three minutes on zoom.com. That's the work.
-        </p>
       </div>
     </div>
   </section>
@@ -579,11 +661,8 @@
           <p class="text-2xl leading-snug font-light text-white mb-6">
             Every member of a digital experience team should be using AI to prototype faster, test more hypotheses, and discover things that would have taken a quarter to find before.
           </p>
-          <p class="text-base leading-relaxed mb-4" style="color: rgba(255,255,255,0.65);">
-            In all of these ways, I see AI as a supercharger for teams, not a replacement. The teams that build the most leverage will be the ones who define where human judgment is irreplaceable — brand, strategy, executive relationships — and let agents own the execution layer underneath it.
-          </p>
-          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.65);">
-            This site was built with the assistance of AI tools as a demonstration of that approach. I used Perplexity for public research on Zoom's earnings, analyst reports, and competitive landscape; Claude Code to build the page; and did the writing by hand because synthesizing multiple strategic sources requires judgment that AI drafts haven't been worth editing. The speed-to-quality tradeoff matters, and knowing which tasks to hand off and which to own is the skill.
+          <p class="text-lg leading-relaxed mb-4" style="color: rgba(255,255,255,0.78);">
+            In all of these ways, I see AI as a supercharger for teams, not a replacement. The teams that build the most leverage will be the ones who define where human judgment is irreplaceable: brand, strategy, and executive relationships. Agents own the execution layer underneath.
           </p>
         </div>
       </div>
@@ -600,8 +679,8 @@
           Strategy for <span class="stat-num">humans.</span><br>
           Experience for <span class="stat-num">agents.</span>
         </h2>
-        <p class="text-base leading-relaxed mx-auto mt-6" style="color: rgba(255,255,255,0.65); max-width: 640px;">
-          The biggest shift in how I'd structure this team isn't headcount — it's architecture. A modern digital experience team runs experiments continuously, serves personalized content at scale, and monitors performance across every touchpoint. Humans set direction and own the decisions that move the business. Agents own the execution layer.
+        <p class="text-lg leading-relaxed mx-auto mt-6" style="color: rgba(255,255,255,0.78); max-width: 640px;">
+          The biggest shift in how I'd structure this team isn't headcount. It's architecture. A modern digital experience team runs experiments continuously, serves personalized content at scale, and monitors performance across every touchpoint. Humans set direction and own the decisions that move the business. Agents own the execution layer.
         </p>
       </div>
 
@@ -613,7 +692,7 @@
             <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
           </div>
           <h3 class="text-base font-bold mb-3 text-white">Experimentation Engine</h3>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Runs continuous A/B tests across value propositions, page layouts, CTAs, and audience flows. Reports wins and losses weekly. The human sets the hypotheses and prioritizes the queue; the agent runs the cycle and surfaces what's working — without waiting for a sprint to start.</p>
+          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">Runs continuous A/B tests across value propositions, page layouts, CTAs, and audience flows. Reports wins and losses weekly. The human sets the hypotheses and prioritizes the queue; the agent runs the cycle and surfaces what's working, without waiting for a sprint to start.</p>
         </div>
 
         <div class="hit-card agent-card p-8" style="grid-column: span 2; transition-delay: 80ms;">
@@ -622,7 +701,7 @@
             <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
           </div>
           <h3 class="text-base font-bold mb-3 text-white">Personalization Layer</h3>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Serves role- and firmographic-based content variations to visitors using company, industry, and behavioral signals. The IT lead and the CX buyer get different entry points, proof points, and next steps — without the team manually managing every segment. Human defines the logic; agent executes delivery at scale.</p>
+          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">Serves role- and firmographic-based content variations to visitors using company, industry, and behavioral signals. The IT lead and the CX buyer get different entry points, proof points, and next steps—without the team manually managing every segment. Human defines the logic; agent executes delivery at scale.</p>
         </div>
 
         <div class="hit-card agent-card p-8" style="grid-column: span 2; transition-delay: 160ms;">
@@ -631,7 +710,7 @@
             <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
           </div>
           <h3 class="text-base font-bold mb-3 text-white">SEO & GEO Monitoring</h3>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Tracks keyword rankings and AI search citations daily. Flags when Zoom loses a high-intent position or fails to appear in an AI-generated answer for a topic like "UCaaS comparison" or "Cisco phone replacement." Generates content briefs automatically for every cluster that needs to exist — in traditional and AI search alike.</p>
+          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">Tracks keyword rankings and AI search citations daily. Flags when Zoom loses a high-intent position or fails to appear in an AI-generated answer for a topic like "UCaaS comparison" or "Cisco phone replacement." Generates content briefs automatically for every cluster that needs to exist, in both traditional and AI search.</p>
         </div>
 
         <div class="hit-card agent-card p-8" style="grid-column: span 2; transition-delay: 240ms;">
@@ -640,7 +719,7 @@
             <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
           </div>
           <h3 class="text-base font-bold mb-3 text-white">Journey Architecture</h3>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Maps conversion paths end-to-end across zoom.com, support.zoom.com, and campaign landing pages. Identifies where each audience type drops off, surfaces the highest-impact fixes for the human team to prioritize, and tracks improvement over time without manual reporting.</p>
+          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">Maps conversion paths end-to-end across zoom.com, support.zoom.com, and campaign landing pages. Identifies where each audience type drops off, surfaces the highest-impact fixes for the human team to prioritize, and tracks improvement over time without manual reporting.</p>
         </div>
 
         <div class="hit-card agent-card p-8" style="grid-column: span 2; transition-delay: 320ms;">
@@ -649,7 +728,7 @@
             <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
           </div>
           <h3 class="text-base font-bold mb-3 text-white">Analytics & Insight</h3>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Synthesizes behavioral data across all Zoom digital properties into a unified view — traffic, engagement, conversion, and attribution. Anyone on the team can query it for a report without waiting for an analyst sprint. The team learns faster; decisions get made on real data instead of gut feel and last quarter's deck.</p>
+          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">Synthesizes behavioral data across all Zoom digital properties into a unified view: traffic, engagement, conversion, and attribution. Anyone on the team can query it for a report without waiting for an analyst sprint. The team learns faster; decisions get made on real data instead of gut feel and last quarter's deck.</p>
         </div>
 
         <div class="hit-card agent-card p-8" style="grid-column: span 2; transition-delay: 400ms;">
@@ -658,63 +737,9 @@
             <span class="text-xs tracking-widest uppercase px-2 py-1" style="background: rgba(99,102,241,0.15); color: rgba(148,163,252,0.85); letter-spacing: 0.15em;">AI Agent</span>
           </div>
           <h3 class="text-base font-bold mb-3 text-white">Content Production</h3>
-          <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.78);">Takes a brief and produces first drafts: product page rewrites, audience-specific landing pages, case study frameworks, test variant copy. A human edits and approves before anything publishes. Collapses the brief-to-publish cycle from weeks to days — which matters when Zoom is making fast strategic moves like the agentic AI announcement or the Pindrop integration.</p>
+          <p class="text-base leading-relaxed" style="color: rgba(255,255,255,0.78);">Takes a brief and produces first drafts: product page rewrites, audience-specific landing pages, case study frameworks, test variant copy. A human edits and approves before anything publishes. Collapses the brief-to-publish cycle from weeks to days. This matters when Zoom is making fast strategic moves like the agentic AI announcement or the Pindrop integration.</p>
         </div>
 
-      </div>
-
-      <!-- Humans vs Agents framing panel -->
-      <div style="background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.2); padding: 3.5rem;">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-          <div>
-            <p class="text-xs tracking-widest uppercase mb-6" style="color: rgba(255,255,255,0.72);">Humans Own</p>
-            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
-              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
-                <span style="color: rgba(148,163,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
-                Brand judgment, platform narrative, and executive relationships
-              </li>
-              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
-                <span style="color: rgba(148,163,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
-                Roadmap prioritization and budget decisions
-              </li>
-              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
-                <span style="color: rgba(148,163,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
-                Cross-functional alignment with product, sales, and engineering
-              </li>
-              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
-                <span style="color: rgba(148,163,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
-                High-stakes positioning and final approval on anything that ships
-              </li>
-            </ul>
-          </div>
-
-          <div class="agents-col">
-            <p class="text-xs tracking-widest uppercase mb-6" style="color: rgba(255,255,255,0.72);">Agents Own</p>
-            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
-              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
-                <span style="color: rgba(192,132,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
-                Experiment execution and continuous optimization loops
-              </li>
-              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
-                <span style="color: rgba(192,132,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
-                Content drafts, personalization delivery, and SEO/GEO monitoring
-              </li>
-              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
-                <span style="color: rgba(192,132,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
-                Performance monitoring and anomaly detection across all properties
-              </li>
-              <li class="text-sm leading-relaxed flex gap-3" style="color: rgba(255,255,255,0.78);">
-                <span style="color: rgba(192,132,252,0.6); flex-shrink: 0; margin-top: 1px;">—</span>
-                Reporting and ad hoc data queries for any team member, any time
-              </li>
-            </ul>
-          </div>
-
-        </div>
-        <p class="font-light text-center mt-10 pt-10" style="font-size: clamp(1.2rem, 2.2vw, 1.65rem); line-height: 1.45; color: rgba(255,255,255,0.88); border-top: 1px solid rgba(255,255,255,0.07); max-width: 680px; margin-left: auto; margin-right: auto;">
-          The goal isn't more content or faster execution. It's a smarter experience that turns Zoom's platform strength into unmistakable competitive clarity for every buyer who lands on zoom.com.
-        </p>
       </div>
 
     </div>
@@ -728,22 +753,22 @@
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <p class="stat-num font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">31K</p>
-          <p class="text-sm mt-3 leading-relaxed" style="color: rgba(255,255,255,0.65);">Monthly visits arriving from AI platforms (ChatGPT, Perplexity, etc.) out of ~25M total — roughly 0.1% of all traffic. A significant GEO investment gap for a brand competing on AI.</p>
+          <p class="text-base mt-3 leading-relaxed" style="color: rgba(255,255,255,0.78);">Monthly visits arriving from AI platforms (ChatGPT, Perplexity, etc.) out of ~25M total, roughly 0.1% of all traffic. A significant GEO investment gap for a brand competing on AI.</p>
         </div>
         <div>
           <p class="stat-num font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">47%</p>
-          <p class="text-sm mt-3 leading-relaxed" style="color: rgba(255,255,255,0.65);">Bounce rate on zoom.com per SimilarWeb — nearly half of visitors leave without exploring a second page on a site selling a 12-product platform.</p>
+          <p class="text-base mt-3 leading-relaxed" style="color: rgba(255,255,255,0.78);">Bounce rate on zoom.com per SimilarWeb. Nearly half of visitors leave without exploring a second page on a site selling a 12-product platform.</p>
         </div>
         <div>
           <p class="stat-num font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">2.17</p>
-          <p class="text-sm mt-3 leading-relaxed" style="color: rgba(255,255,255,0.65);">Average pages per visit across zoom.com. For a company with enterprise, CX, phone, AI, and developer audiences, visitors aren't finding adjacent content or paths.</p>
+          <p class="text-base mt-3 leading-relaxed" style="color: rgba(255,255,255,0.78);">Average pages per visit across zoom.com. For a company with enterprise, CX, phone, AI, and developer audiences, visitors aren't finding adjacent content or paths.</p>
         </div>
         <div>
           <p class="stat-num font-bold leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">0</p>
-          <p class="text-sm mt-3 leading-relaxed" style="color: rgba(255,255,255,0.65);">Audience-specific journey paths detectable on the homepage for IT, CX, HR, or sales visitors. All six buyer types receive the same default experience.</p>
+          <p class="text-base mt-3 leading-relaxed" style="color: rgba(255,255,255,0.78);">Audience-specific journey paths detectable on the homepage for IT, CX, HR, or sales visitors. All six buyer types receive the same default experience.</p>
         </div>
       </div>
-      <p class="text-xs mt-8" style="color: rgba(255,255,255,0.35);">Sources: SimilarWeb, SEMrush — March 2026 snapshots. AI platform traffic figure from SEMrush AI platform traffic report. Audience path observation from direct site review.</p>
+      <p class="text-xs mt-8" style="color: rgba(255,255,255,0.65);">Sources: SimilarWeb, SEMrush—March 2026 snapshots. AI platform traffic figure from SEMrush AI platform traffic report. Audience path observation from direct site review.</p>
     </div>
   </section>
 
@@ -751,15 +776,14 @@
   <section class="px-8 pb-24 max-w-screen-xl mx-auto relative">
     <div class="section-border pt-16">
       <p class="font-bold leading-tight tracking-tight" style="font-size: clamp(1.75rem, 3.5vw, 3rem);">
-        Zoom's biggest digital experience opportunity isn't a redesign —
+        Zoom's biggest digital experience opportunity isn't a redesign.
         <mark class="hl">it's closing the gap between the platform's proven strengths and what any visitor can understand in the first three minutes on the site.</mark>
       </p>
     </div>
   </section>
 
-  <!-- QUICK HITS -->
-  <section class="relative" style="background: #eef2fc; border-top: 1px solid rgba(8,12,20,0.08); color: #080c14;">
-  <div class="px-8 py-24 max-w-screen-xl mx-auto">
+  <!-- QUICK HITS REMOVED -->
+  <div style="display:none"><div class="px-8 py-24 max-w-screen-xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
       <div class="lg:col-span-3">
         <p class="text-sm tracking-widest uppercase" style="color: rgba(8,12,20,0.72);">Quick Hits</p>
@@ -773,89 +797,88 @@
 
       <!-- 1 -->
       <div class="hit-card hit-card-light p-8" style="transition-delay: 0ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">01</p>
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.65);">01</p>
         <h3 class="text-base font-bold mb-3">The homepage still frames Zoom as a meetings product</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
-          The hero reads "Find out what's possible when work connects" — aspirational but abstract, and the immediate follow-up is a product carousel that leads with Meetings. An IT buyer evaluating Cisco alternatives or a CX leader reading about Gartner's first Zoom CCaaS inclusion would have to <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">dig past the meetings messaging</mark> to find what they came for.
+        <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          The hero reads "Find out what's possible when work connects"—aspirational but abstract, and the immediate follow-up is a product carousel that leads with Meetings. An IT buyer evaluating Cisco alternatives or a CX leader reading about Gartner's first Zoom CCaaS inclusion would have to <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">dig past the meetings messaging</mark> to find what they came for.
         </p>
       </div>
 
       <!-- 2 -->
       <div class="hit-card hit-card-light p-8" style="transition-delay: 75ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">02</p>
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.65);">02</p>
         <h3 class="text-base font-bold mb-3">Twelve products, no hierarchy</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
-          The homepage product grid surfaces Meetings, Contact Center, AI Companion, Phone, Whiteboard, Docs, Rooms, Virtual Agent, Clips, Revenue Accelerator, and more — as a flat set of equally weighted tiles. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">No prioritization by audience, growth area, or competitive urgency.</mark> Enterprise buyers can't immediately tell which products are for them.
+        <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          The homepage product grid surfaces Meetings, Contact Center, AI Companion, Phone, Whiteboard, Docs, Rooms, Virtual Agent, Clips, Revenue Accelerator, and more—as a flat set of equally weighted tiles. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">No prioritization by audience, growth area, or competitive urgency.</mark> Enterprise buyers can't immediately tell which products are for them.
         </p>
       </div>
 
       <!-- 3 -->
       <div class="hit-card hit-card-light p-8" style="transition-delay: 150ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">03</p>
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.65);">03</p>
         <h3 class="text-base font-bold mb-3">Analyst validation is scattered, not featured</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
-          Zoom received the highest possible Forrester scores in 16 criteria, was recognized as a Customers' Choice in Gartner Peer Insights, and earned its first-ever CCaaS Magic Quadrant inclusion — but these live in blog posts and a small trust strip, not as central elements of the page. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">The "only Leader with above-average customer feedback"</mark> Forrester designation is buried.
+        <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          Zoom received the highest possible Forrester scores in 16 criteria, was recognized as a Customers' Choice in Gartner Peer Insights, and earned its first-ever CCaaS Magic Quadrant inclusion—but these live in blog posts and a small trust strip, not as central elements of the page. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">The "only Leader with above-average customer feedback"</mark> Forrester designation is buried.
         </p>
       </div>
 
       <!-- 4 -->
       <div class="hit-card hit-card-light p-8" style="transition-delay: 225ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">04</p>
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.65);">04</p>
         <h3 class="text-base font-bold mb-3">AI Companion is described, not demonstrated</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
-          AI Companion 3.0 gets a prominent section, but it's written in marketing language — "context capture, summaries, automations." There are no interactive demos, before/after workflow comparisons, or product-led explorations showing how the AI Panel behaves differently in Docs vs. Meetings vs. Phone. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">The magic is hidden from the buyers who most need to see it.</mark>
+        <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          AI Companion 3.0 gets a prominent section, but it's written in marketing language—"context capture, summaries, automations." There are no interactive demos, before/after workflow comparisons, or product-led explorations showing how the AI Panel behaves differently in Docs vs. Meetings vs. Phone. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">The magic is hidden from the buyers who most need to see it.</mark>
         </p>
       </div>
 
       <!-- 5 -->
       <div class="hit-card hit-card-light p-8" style="transition-delay: 300ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">05</p>
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.65);">05</p>
         <h3 class="text-base font-bold mb-3">Three digital destinations, no cohesive journey</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
+        <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">
           zoom.com, support.zoom.com, and learning.zoom.us have different design systems, different navigation patterns, and different content tones. A buyer who clicks from a marketing page into the Learning Center or Support feels like they've left the site. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">Unifying these into a cohesive journey architecture</mark> would meaningfully raise the depth and quality of every visit.
         </p>
       </div>
 
       <!-- 6 -->
       <div class="hit-card hit-card-light p-8" style="transition-delay: 375ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">06</p>
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.65);">06</p>
         <h3 class="text-base font-bold mb-3">The CCaaS entry point is unclear for evaluators</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
+        <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">
           Zoom's Contact Center is growing at high double-digit ARR and displacing Genesys and Talkdesk in competitive deals. But a buyer who arrives via a Gartner CCaaS report looking to evaluate Zoom has to navigate the Products menu to find the Contact Center page, where the first-ever Gartner Magic Quadrant milestone isn't <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">immediately and confidently visible.</mark>
         </p>
       </div>
 
       <!-- 7 -->
       <div class="hit-card hit-card-light p-8" style="transition-delay: 450ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">07</p>
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.65);">07</p>
         <h3 class="text-base font-bold mb-3">Conversion paths aren't differentiated by buyer type</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
-          "Find your plan" and "Get started today" are clear CTAs — but they lead to the same pricing page regardless of whether the visitor is an SMB looking for Meetings or a Fortune 500 evaluating Contact Center. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">Progressive-profiling flows and segmented conversion paths</mark> would increase qualified pipeline without adding friction for self-serve buyers.
+        <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          "Find your plan" and "Get started today" are clear CTAs—but they lead to the same pricing page regardless of whether the visitor is an SMB looking for Meetings or a Fortune 500 evaluating Contact Center. <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">Progressive-profiling flows and segmented conversion paths</mark> would increase qualified pipeline without adding friction for self-serve buyers.
         </p>
       </div>
 
       <!-- 8 -->
       <div class="hit-card hit-card-light p-8" style="transition-delay: 525ms;">
-        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.4);">08</p>
+        <p class="text-xs tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.65);">08</p>
         <h3 class="text-base font-bold mb-3">GEO / AI search investment appears low</h3>
-        <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">
-          Zoom.com receives approximately <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">31,000 visits per month from AI platforms</mark> — roughly 0.1% of total traffic. For a brand competing on the basis of being an AI-first platform, and for buyers who are increasingly using ChatGPT and Perplexity to research enterprise software, that number suggests an underinvested GEO strategy that would meaningfully reward attention in 2026.
+        <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          Zoom.com receives approximately <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">31,000 visits per month from AI platforms</mark>—roughly 0.1% of total traffic. For a brand competing on the basis of being an AI-first platform, and for buyers who are increasingly using ChatGPT and Perplexity to research enterprise software, that number suggests an underinvested GEO strategy that would meaningfully reward attention in 2026.
         </p>
       </div>
 
     </div>
 
-    <!-- Image pair placeholder — replace with actual zoom.com screenshots when ready -->
+    <!-- Image pair placeholder—replace with actual zoom.com screenshots when ready -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12">
       <div class="screenshot" style="border-color: rgba(8,12,20,0.1); background: #dde3f4; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-        <p style="color: rgba(8,12,20,0.3); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;">Screenshot placeholder — zoom.com homepage</p>
+        <p style="color: rgba(8,12,20,0.65); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;">Screenshot placeholder—zoom.com homepage</p>
       </div>
       <div class="screenshot" style="border-color: rgba(8,12,20,0.1); background: #dde3f4; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-        <p style="color: rgba(8,12,20,0.3); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;">Screenshot placeholder — zoom.com product nav</p>
+        <p style="color: rgba(8,12,20,0.65); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;">Screenshot placeholder—zoom.com product nav</p>
       </div>
     </div>
-  </div>
-  </section>
+  </div></div>
 
   <!-- A TEST FROM MY TIME AT NETAPP -->
   <section class="relative" style="background-color: #f5f7fd; border-top: 1px solid rgba(8,12,20,0.08); background-image: radial-gradient(ellipse 70% 70% at 96% 4%, rgba(99,102,241,0.1) 0%, transparent 60%), radial-gradient(ellipse 50% 55% at 4% 96%, rgba(168,85,247,0.08) 0%, transparent 55%); color: #080c14;">
@@ -863,12 +886,12 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div>
         <p class="text-sm tracking-widest uppercase mb-4" style="color: rgba(8,12,20,0.72);">A Test from My Time at NetApp</p>
-        <h2 class="text-3xl font-bold leading-tight mb-6">Asking Questions</h2>
-        <p class="text-base leading-relaxed mb-4" style="color: rgba(8,12,20,0.7);">
+        <h2 class="text-3xl font-bold leading-tight mb-6">Asking simple questions can yield big results</h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: rgba(8,12,20,0.7);">
           One small but important test I ran at NetApp was to simply ask customers what they were looking for on the site. It started as a single-page experiment but grew into whole-site profiling efforts. The assumption: <mark class="hl" style="color: #312e81; background: linear-gradient(120deg, rgba(99,102,241,0.14) 0%, rgba(168,85,247,0.14) 100%);">B2B buyers don't want to waste time</mark>, and will tell you what they need if you make it easy. So we just asked.
         </p>
-        <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">
-          Zoom could benefit from a similar approach — profiling the visitor early in the journey and routing them accordingly. What industry are you in? Are you evaluating contact center, workplace collaboration, or phone? What team are you on? The answers don't just improve personalization; they speed up every downstream touchpoint including sales, and make the site feel like it was built for the person using it.
+        <p class="text-lg leading-relaxed" style="color: rgba(8,12,20,0.7);">
+          Zoom could benefit from a similar approach: profiling the visitor early in the journey and routing them accordingly. What industry are you in? Are you evaluating contact center, workplace collaboration, or phone? What team are you on? The answers don't just improve personalization; they speed up every downstream touchpoint including sales, and make the site feel like it was built for the person using it.
         </p>
       </div>
       <div class="screenshot" style="border-color: rgba(8,12,20,0.1);">
@@ -881,58 +904,98 @@
   <!-- BOTTOM CTA -->
   <section class="px-8 py-24 relative" style="background-color: #ffffff; background-image: radial-gradient(ellipse 65% 60% at 100% 0%, rgba(99,102,241,0.07) 0%, transparent 55%), radial-gradient(ellipse 55% 55% at 0% 100%, rgba(168,85,247,0.06) 0%, transparent 55%); border-top: 1px solid rgba(8,12,20,0.08); border-bottom: 1px solid rgba(8,12,20,0.08); color: #080c14;">
     <div class="max-w-screen-xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-        <div class="lg:col-span-8">
-          <p class="text-sm tracking-widest uppercase mb-6" style="color: rgba(8,12,20,0.72);">Thank you for the opportunity</p>
-          <h2 class="font-bold leading-tight" style="font-size: clamp(2rem, 4vw, 3.25rem);">
-            This is an introductory look at how Zoom's digital experience could be rebuilt to lead the company's AI-first platform narrative.
-          </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-3">
+          <p class="text-sm tracking-widest uppercase mt-1" style="color: rgba(8,12,20,0.55);">Thank you</p>
         </div>
-        <div class="lg:col-span-4 lg:text-right flex flex-col gap-4 items-start lg:items-end">
-          <a href="mailto:hi@andy.is"
-             class="inline-block font-semibold text-white btn-cta"
-             style="background: linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%); padding: 14px 32px; border-radius: 4px; font-size: 0.9375rem;"
-             onclick="gtag('event','click',{event_category:'CTA',event_label:'Bottom – Lets talk – Zoom'});">
-            Let's talk <span class="btn-arrow">→</span>
-          </a>
-          <a href="/assets/andy-stone-resume-zoom.pdf"
-             class="inline-block font-semibold btn-outline"
-             style="color: #4338ca; font-size: 0.9375rem; padding: 14px 32px; border-radius: 4px; border: 1.5px solid rgba(99,102,241,0.35); background: rgba(99,102,241,0.05);"
-             onclick="gtag('event','click',{event_category:'CTA',event_label:'Bottom – Download Resume – Zoom'});">
-            Download Resume <span class="btn-arrow">→</span>
-          </a>
+        <div class="lg:col-span-7">
+          <h2 class="font-bold leading-tight mb-8" style="font-size: clamp(2rem, 4vw, 3.25rem);">
+            This is an introductory look at how Zoom's digital experience could help lead the AI-first platform narrative.
+          </h2>
+          <div class="flex flex-wrap gap-4 mb-16">
+            <a href="mailto:hi@andy.is"
+               class="inline-block font-semibold text-white btn-cta btn-gradient"
+               onclick="gtag('event','click',{event_category:'CTA',event_label:'Bottom – Lets talk – Zoom'});">
+              Let's talk <span class="btn-arrow">→</span>
+            </a>
+            <a href="/assets/andy-stone-resume-zoom.pdf"
+               class="inline-block font-semibold btn-outline"
+               style="color: #4338ca; font-size: 0.9375rem; padding: 14px 32px; border-radius: 4px; border: 1.5px solid rgba(99,102,241,0.35); background: rgba(99,102,241,0.05);"
+               onclick="gtag('event','click',{event_category:'CTA',event_label:'Bottom – Download Resume – Zoom'});">
+              Download Resume <span class="btn-arrow">→</span>
+            </a>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-16" style="border-top: 1px solid rgba(8,12,20,0.1);">
+            <div>
+              <p class="text-sm tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.55);">My Time at NetApp</p>
+              <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">Led a full transformation of NetApp's global demand engine: a 20,000-page site across 10 languages. In the first year after relaunch, organic traffic doubled, SQLs increased by 11%, and Forbes ranked the site #1 in B2B digital experience among Fortune 500 companies.</p>
+            </div>
+            <div>
+              <p class="text-sm tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.55);">Founded & Acquired</p>
+              <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">Founded Emerson Stone, a B2B design and strategy agency (clients: IBM, 3M, Wells Fargo, Twitter), acquired by Sawaya Consulting. Co-founded Mocavo, a genealogical search engine that grew to the third largest in the industry before acquisition by FindMyPast.</p>
+            </div>
+            <div>
+              <p class="text-sm tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.55);">How I Work</p>
+              <p class="text-base leading-relaxed" style="color: rgba(8,12,20,0.7);">I start by learning from the sales and marketing teams to understand what's working, where investment is needed, and how to prioritize. I'm drawn to moments where the product is ahead of the story being told about it online, and where the digital experience has real leverage over growth.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16 pt-16" style="border-top: 1px solid rgba(8,12,20,0.1);">
-        <div>
-          <p class="text-sm tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.72);">My Time at NetApp</p>
-          <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">Led a full transformation of NetApp's global demand engine — a 20,000-page site across 10 languages. In the first year after relaunch, organic traffic doubled, SQLs increased by 11%, and Forbes ranked the site #1 in B2B digital experience among Fortune 500 companies.</p>
+  <!-- PERSONAL / OUTSIDE WORK -->
+  <section style="background: #f5f8ff; border-top: 1px solid rgba(8,12,20,0.07); color: #080c14;">
+    <div class="px-8 py-24 max-w-screen-xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-3">
+          <p class="text-sm tracking-widest uppercase mt-1" style="color: rgba(8,12,20,0.55);">Outside work</p>
         </div>
-        <div>
-          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.5);">Founded & Acquired</p>
-          <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">Founded Emerson Stone, a B2B design and strategy agency (clients: IBM, 3M, Wells Fargo, Twitter) — acquired by Sawaya Consulting. Co-founded Mocavo, a genealogical search engine that grew to the third largest in the industry before acquisition by FindMyPast.</p>
-        </div>
-        <div>
-          <p class="text-xs tracking-widest uppercase mb-3" style="color: rgba(8,12,20,0.5);">How I Work</p>
-          <p class="text-sm leading-relaxed" style="color: rgba(8,12,20,0.7);">I start by learning from the sales and marketing teams — to understand what's working, where investment is needed, and how to prioritize. I'm drawn to moments where the product is ahead of the story being told about it online, and where the digital experience has real leverage over growth.</p>
+        <div class="lg:col-span-7">
+          <div style="width: 112px; height: 112px; border-radius: 50%; overflow: hidden; margin-bottom: 1.75rem;">
+            <img src="/images/andy-stone-headshot.jpg" alt="Andy Stone" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <p class="text-2xl font-light leading-snug mb-6" style="color: #080c14;">
+            I currently live in San Diego where I get to enjoy great weather throughout the year.
+          </p>
+          <p class="text-lg leading-relaxed mb-4" style="color: rgba(8,12,20,0.68);">
+            I try to surf before or after work most days, do a little bit of road biking, and get frustrated with golf on the weekends.
+          </p>
+          <p class="text-lg leading-relaxed mb-4" style="color: rgba(8,12,20,0.68);">
+            My friends and I created a movie club in town, and I love going to the theater for new movies or screenings of old pictures. I love seeing live music, playing chess with friends, and reading both fiction and non-fiction. Recent favorites include <em>The Will of the Many</em>, <em>The Art Thief</em>, and <em>The Wager</em>.
+          </p>
+          <p class="text-lg leading-relaxed mb-10" style="color: rgba(8,12,20,0.68);">
+            I think companies and teams do better when people are able to be themselves at work. As I look at the next step in my career, I'm hoping to work with a great team who has passions both inside and outside of the office.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="https://letterboxd.com/andy/" target="_blank" rel="noopener"
+               style="display: inline-flex; align-items: center; gap: 10px; background: white; border: 1px solid rgba(8,12,20,0.12); padding: 12px 20px; border-radius: 4px; font-size: 0.9rem; font-weight: 600; color: #080c14; text-decoration: none; transition: box-shadow 0.2s ease, transform 0.2s ease;"
+               onmouseover="this.style.boxShadow='0 4px 16px rgba(8,12,20,0.12)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'"
+               onclick="gtag('event','click',{event_category:'CTA',event_label:'Personal – Letterboxd – Zoom'});">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="8.5" stroke="#080c14" stroke-opacity=".18"/><circle cx="6" cy="9" r="3.5" fill="#00B020"/><circle cx="12" cy="9" r="3.5" fill="#F97316" style="mix-blend-mode:multiply"/></svg>
+              My Letterboxd
+            </a>
+            <a href="https://open.spotify.com/user/andyincolor" target="_blank" rel="noopener"
+               style="display: inline-flex; align-items: center; gap: 10px; background: white; border: 1px solid rgba(8,12,20,0.12); padding: 12px 20px; border-radius: 4px; font-size: 0.9rem; font-weight: 600; color: #080c14; text-decoration: none; transition: box-shadow 0.2s ease, transform 0.2s ease;"
+               onmouseover="this.style.boxShadow='0 4px 16px rgba(8,12,20,0.12)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'"
+               onclick="gtag('event','click',{event_category:'CTA',event_label:'Personal – Spotify – Zoom'});">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#1DB954"/><path d="M12.8 12.2c-.15.24-.47.32-.71.17-1.95-1.19-4.41-1.46-7.3-.8a.52.52 0 01-.23-1.01c3.16-.72 5.87-.41 8.07.93.24.15.32.47.17.71zm.86-1.91c-.19.3-.59.39-.89.2-2.24-1.37-5.64-1.77-8.29-.97a.645.645 0 01-.37-1.24c3.02-.91 6.77-.47 9.35 1.12.3.19.39.59.2.89zm.07-1.98C11.1 6.72 6.9 6.58 4.31 7.34a.775.775 0 01-.45-1.48c2.96-.9 7.88-.73 10.99 1.28.35.22.46.68.24 1.03-.22.35-.68.46-1.03.24-.03-.02-.05-.04-.13-.1z" fill="white"/></svg>
+              My Spotify
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <script>
-    const funnelRows = document.querySelectorAll('.funnel-row');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.2 });
-    funnelRows.forEach(row => observer.observe(row));
-
-    const hitCards = document.querySelectorAll('.hit-card');
     const cardObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-    hitCards.forEach(card => cardObserver.observe(card));
+    document.querySelectorAll('.hit-card').forEach(card => cardObserver.observe(card));
+    // Flip cards are handled by onclick on each .flip-card element and do not need the observer.
   </script>
 
 </body>
