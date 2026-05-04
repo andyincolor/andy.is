@@ -135,6 +135,8 @@
     }
 
     /* Journey Map - light mode */
+    .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
     .journey-grid {
       display: grid;
       grid-template-columns: 140px repeat(5, 1fr);
@@ -396,7 +398,7 @@
 
       </div>
 
-      <div class="overflow-x-auto lg:px-8 lg:max-w-screen-xl lg:mx-auto" style="touch-action: pan-x pan-y;">
+      <div class="overflow-x-auto no-scrollbar lg:px-8 lg:max-w-screen-xl lg:mx-auto" style="touch-action: pan-x pan-y;">
         <div class="journey-grid" style="min-width: 700px;">
 
           <!-- Header row -->
