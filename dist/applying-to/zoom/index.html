@@ -94,16 +94,11 @@
     .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.18); opacity: 1 !important; }
     .btn-outline { transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease; }
     .btn-outline:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); border-color: rgba(99,102,241,0.65) !important; opacity: 1 !important; }
-    nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(245,248,255,0.92); border-bottom: 1px solid rgba(8,12,20,0.08); transition: background 0.3s ease, border-color 0.3s ease; }
-    nav.nav-dark { background: rgba(8,12,20,0.8); border-bottom-color: rgba(255,255,255,0.07); }
-    .nav-text { color: #080c14; transition: color 0.3s ease; }
-    nav.nav-dark .nav-text { color: white; }
-    .nav-btn { border: 1px solid rgba(8,12,20,0.2); border-radius: 4px; transition: border-color 0.3s ease; }
-    nav.nav-dark .nav-btn { border-color: rgba(255,255,255,0.2); }
+    nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(245,248,255,0.55); border-bottom: 1px solid rgba(8,12,20,0.08); }
+    .nav-text { color: #080c14; }
+    .nav-btn { border: 1px solid rgba(8,12,20,0.2); border-radius: 4px; }
     .btn-nav-link { transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease; }
-    .btn-nav-link:hover { transform: translateY(-2px); opacity: 1 !important; }
-    nav:not(.nav-dark) .btn-nav-link:hover { border-color: rgba(8,12,20,0.45) !important; }
-    nav.nav-dark .btn-nav-link:hover { border-color: rgba(255,255,255,0.45) !important; }
+    .btn-nav-link:hover { transform: translateY(-2px); border-color: rgba(8,12,20,0.45) !important; opacity: 1 !important; }
     .btn-arrow { display: inline-block; transition: transform 0.22s ease; }
     .btn-cta:hover .btn-arrow, .btn-outline:hover .btn-arrow { transform: translateX(5px); }
     .section-border { border-top: 1px solid rgba(255,255,255,0.08); }
@@ -1004,14 +999,6 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.hit-card').forEach(card => cardObserver.observe(card));
 
-    const heroEl = document.getElementById('hero-section');
-    const navEl = document.querySelector('nav');
-    if (heroEl && navEl) {
-      new IntersectionObserver(
-        ([e]) => navEl.classList.toggle('nav-dark', !e.isIntersecting),
-        { threshold: 0 }
-      ).observe(heroEl);
-    }
   </script>
 
 </body>
