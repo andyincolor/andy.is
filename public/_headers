@@ -2,3 +2,13 @@
   X-Robots-Tag: noindex, nofollow, noarchive
 /working-on-netapp/*
   X-Robots-Tag: noindex, nofollow, noarchive
+/applying-to/netapp
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+/applying-to/netapp/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+/video/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+/assets/andy-stone-resume-netapp.pdf
+  X-Robots-Tag: noindex, nofollow, noarchive
+/images/work/netapp/*
+  X-Robots-Tag: noindex, noimageindex
